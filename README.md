@@ -2,7 +2,7 @@
 my experiment
 
 testing :
-1 <br /> Widget
-  a  with timer
-  b  launch app
+<br />1  Widget
+  <br />a  with timer
+  <br />b  launch app
   
