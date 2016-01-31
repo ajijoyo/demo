@@ -2,7 +2,7 @@
 my experiment
 
 testing :
-1  Widget
+1 <br /> Widget
   a  with timer
   b  launch app
   
