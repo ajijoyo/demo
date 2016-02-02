@@ -39,11 +39,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredContentSize = CGSize(width: 0, height: heightCollapse)
-        ads = adsOn(frame: CGRect(x: 0, y: 105, width: self.view.frame.width - 48, height: 30))
+        ads = adsOn(frame: CGRect(x: 0, y: 105, width: self.view.frame.width , height: 30))
+        ads.autoresizingMask = [.FlexibleHeight,.FlexibleWidth]
         self.view.addSubview(ads)
         
         updateInterface()
-        detailDisk.alpha = 1
         let tap = UITapGestureRecognizer(target: self, action: "istapped")
         self.view.addGestureRecognizer(tap)
         self.view.userInteractionEnabled = true
@@ -53,9 +53,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
-//        coordinator.animateAlongsideTransition({ context in
-//            self.detailDisk.alpha = 1
-//            }, completion: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -102,7 +99,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func updateInterface(){
-//        ads.frame = CGRect(x: 0, y: 105, width: self.view.frame.width - 48, height: 30)
         let rate = self.usedRate ; // retrieve the cached value
         
         if (rate < 0.5) {

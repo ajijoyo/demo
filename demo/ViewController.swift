@@ -35,12 +35,22 @@ class ViewController: UIViewController ,SplitflapDataSource,SplitflapDelegate{
         
     }
     
-
+    func alert(){
+        let alertcontroll = UIAlertController(title: "token", message: NSUserDefaults.standardUserDefaults().stringForKey("tokenby"), preferredStyle: .Alert)
+        let alertbttn = UIAlertAction(title: "oke", style: .Default,
+            handler: {(action : UIAlertAction) in
+        
+        })
+        alertcontroll.addAction(alertbttn)
+        self.presentViewController(alertcontroll, animated: true, completion: nil)
+        
+    }
     
     override func viewDidAppear(animated: Bool) {
         
         split.setText(sikl[Int(arc4random_uniform(3))], animated: true, completionBlock: {
             print("finish")
+            self.alert()
         })
     }
     
