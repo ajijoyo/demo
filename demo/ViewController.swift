@@ -20,10 +20,6 @@ class ViewController: UIViewController ,SplitflapDataSource,SplitflapDelegate{
         super.viewDidLoad()
         print(sikl.reverse())
         
-//        FlapViewBuilder { builder in
-//            builder.backgroundColor = UIColor.whiteColor()
-//        }
-        
         split = Splitflap()
         split.frame = CGRect(x: 0, y: 80, width: 300, height: 50)
         split.center.x = self.view.center.x
@@ -72,6 +68,10 @@ class ViewController: UIViewController ,SplitflapDataSource,SplitflapDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func backgroundFecth(result:(resultBG : UIBackgroundFetchResult) -> Void){
+        
+    }
 
 
 

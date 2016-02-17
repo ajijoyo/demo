@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingNotif = UIUserNotificationSettings(forTypes: [.Alert,.Badge,.Sound], categories: nil)
         application.registerUserNotificationSettings(settingNotif)
         
+        application.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        
         return true
     }
     
@@ -74,7 +76,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        let vc = self.window?.rootViewController  as? ViewController
+        if vc != nil {
+            vc?.backgroundFecth({(result)in
+                completionHandler(result)
+            })
+        }
+        
+        return completionHandler(.NewData)
+    }
+    
+    func topMostViewController() -> UIViewController? {
+        if var current = UIApplication.sharedApplication().keyWindow?.rootViewController {
+            while let presentedViewController = current.presentedViewController {
+                current = presentedViewController
+            }
+            return current
+        }
+        return nil
+    }
 
 }
 

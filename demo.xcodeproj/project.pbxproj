@@ -28,6 +28,15 @@
 		D31ACBCF1C0410D3000AF3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31ACBCD1C0410D3000AF3C7 /* LaunchScreen.storyboard */; };
 		D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */; };
 		D31ACBD91C041656000AF3C7 /* duaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBD81C041656000AF3C7 /* duaViewController.swift */; };
+		D34E2ACD1C72FA5400E7A3E2 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = D34E2ACC1C72FA5400E7A3E2 /* plane.png */; };
+		D3655BF41C746DE300ABE71C /* Wallpaper-686.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3655BED1C746DE300ABE71C /* Wallpaper-686.jpg */; };
+		D3655BF51C746DE300ABE71C /* roundedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D3655BEE1C746DE300ABE71C /* roundedLogo.png */; };
+		D3655BF61C746DE300ABE71C /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3655BEF1C746DE300ABE71C /* image.jpg */; };
+		D3655BF71C746DE300ABE71C /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = D3655BF01C746DE300ABE71C /* circle.png */; };
+		D3655BF81C746DE300ABE71C /* planet.png in Resources */ = {isa = PBXBuildFile; fileRef = D3655BF11C746DE300ABE71C /* planet.png */; };
+		D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3655BF21C746DE300ABE71C /* gameHiddenObjectViewController.swift */; };
+		D3655BFA1C746DE300ABE71C /* gameHiddenObjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3655BF31C746DE300ABE71C /* gameHiddenObjectViewController.xib */; };
+		D3655BFD1C746E5700ABE71C /* homeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +88,15 @@
 		D31ACBD01C0410D3000AF3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJslideNavigator.swift; sourceTree = "<group>"; };
 		D31ACBD81C041656000AF3C7 /* duaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = duaViewController.swift; sourceTree = "<group>"; };
+		D34E2ACC1C72FA5400E7A3E2 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
+		D3655BED1C746DE300ABE71C /* Wallpaper-686.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wallpaper-686.jpg"; sourceTree = "<group>"; };
+		D3655BEE1C746DE300ABE71C /* roundedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundedLogo.png; sourceTree = "<group>"; };
+		D3655BEF1C746DE300ABE71C /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		D3655BF01C746DE300ABE71C /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		D3655BF11C746DE300ABE71C /* planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = planet.png; sourceTree = "<group>"; };
+		D3655BF21C746DE300ABE71C /* gameHiddenObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameHiddenObjectViewController.swift; sourceTree = "<group>"; };
+		D3655BF31C746DE300ABE71C /* gameHiddenObjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gameHiddenObjectViewController.xib; sourceTree = "<group>"; };
+		D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,10 +175,13 @@
 		D31ACBC31C0410D3000AF3C7 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				D34E2ACC1C72FA5400E7A3E2 /* plane.png */,
+				D3655BFB1C746DEA00ABE71C /* gamesHiddenObject */,
 				D3081A1B1C57272F0034A712 /* Splitflap */,
 				D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */,
 				D31ACBC61C0410D3000AF3C7 /* ViewController.swift */,
 				D31ACBC81C0410D3000AF3C7 /* Main.storyboard */,
+				D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */,
 				D31ACBD81C041656000AF3C7 /* duaViewController.swift */,
 				D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */,
 				D31ACBCB1C0410D3000AF3C7 /* Assets.xcassets */,
@@ -168,6 +189,20 @@
 				D31ACBD01C0410D3000AF3C7 /* Info.plist */,
 			);
 			path = demo;
+			sourceTree = "<group>";
+		};
+		D3655BFB1C746DEA00ABE71C /* gamesHiddenObject */ = {
+			isa = PBXGroup;
+			children = (
+				D3655BED1C746DE300ABE71C /* Wallpaper-686.jpg */,
+				D3655BEE1C746DE300ABE71C /* roundedLogo.png */,
+				D3655BEF1C746DE300ABE71C /* image.jpg */,
+				D3655BF01C746DE300ABE71C /* circle.png */,
+				D3655BF11C746DE300ABE71C /* planet.png */,
+				D3655BF21C746DE300ABE71C /* gameHiddenObjectViewController.swift */,
+				D3655BF31C746DE300ABE71C /* gameHiddenObjectViewController.xib */,
+			);
+			name = gamesHiddenObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +304,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3655BF51C746DE300ABE71C /* roundedLogo.png in Resources */,
+				D3655BFA1C746DE300ABE71C /* gameHiddenObjectViewController.xib in Resources */,
+				D3655BF41C746DE300ABE71C /* Wallpaper-686.jpg in Resources */,
+				D34E2ACD1C72FA5400E7A3E2 /* plane.png in Resources */,
+				D3655BF81C746DE300ABE71C /* planet.png in Resources */,
 				D31ACBCF1C0410D3000AF3C7 /* LaunchScreen.storyboard in Resources */,
+				D3655BF61C746DE300ABE71C /* image.jpg in Resources */,
 				D31ACBCC1C0410D3000AF3C7 /* Assets.xcassets in Resources */,
 				D31ACBCA1C0410D3000AF3C7 /* Main.storyboard in Resources */,
+				D3655BF71C746DE300ABE71C /* circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +336,9 @@
 				D3081A2B1C57272F0034A712 /* TileView.swift in Sources */,
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
+				D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */,
 				D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */,
+				D3655BFD1C746E5700ABE71C /* homeTableViewController.swift in Sources */,
 				D3081A291C57272F0034A712 /* SplitflapDelegate.swift in Sources */,
 				D3081A261C57272F0034A712 /* FlapViewBuilder.swift in Sources */,
 				D3081A2D1C57272F0034A712 /* TokenParser.swift in Sources */,
