@@ -10,7 +10,7 @@ import UIKit
 
 class homeTableViewController: UITableViewController {
     
-    let arrMenu = ["splitFlap","hidden object games"]
+    let arrMenu = ["splitFlap","hidden object games","tiles games"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,9 @@ class homeTableViewController: UITableViewController {
         }else if indexPath.row == 1 {
             let vc = gameHiddenObjectViewController()
             self.navigationController?.pushViewController(vc, animated: true)
+        }else if indexPath.row == 2 {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tilesgames");
+            self.navigationController?.pushViewController(vc!, animated: true)
         }
     }
 

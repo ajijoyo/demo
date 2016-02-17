@@ -23,6 +23,41 @@
             </objects>
             <point key="canvasLocation" x="471" y="208"/>
         </scene>
+        <!--Tiles View Controller-->
+        <scene sceneID="Dlr-1g-HDo">
+            <objects>
+                <viewController storyboardIdentifier="tilesgames" id="Xi2-ow-WT3" customClass="tilesViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Eb4-8A-ekz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y9m-Qn-lac"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x5w-Bw-ovw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcV-VZ-Xs5" customClass="IXNTileBoardView">
+                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1gL-y1-6f9"/>
+                                    <constraint firstAttribute="height" constant="300" id="k20-TP-icR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XcV-VZ-Xs5" firstAttribute="centerY" secondItem="x5w-Bw-ovw" secondAttribute="centerY" id="1p9-ih-LwK"/>
+                            <constraint firstItem="XcV-VZ-Xs5" firstAttribute="centerX" secondItem="x5w-Bw-ovw" secondAttribute="centerX" id="83S-ay-wA5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardTiles" destination="XcV-VZ-Xs5" id="fZJ-4Q-umT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhw-9p-E8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823" y="208"/>
+        </scene>
         <!--Jslide Navigator-->
         <scene sceneID="csg-W6-dBF">
             <objects>

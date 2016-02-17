@@ -37,6 +37,10 @@
 		D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3655BF21C746DE300ABE71C /* gameHiddenObjectViewController.swift */; };
 		D3655BFA1C746DE300ABE71C /* gameHiddenObjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3655BF31C746DE300ABE71C /* gameHiddenObjectViewController.xib */; };
 		D3655BFD1C746E5700ABE71C /* homeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */; };
+		D3655C061C74757300ABE71C /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = D3655C011C74757300ABE71C /* UIImage+Resize.m */; };
+		D3655C071C74757300ABE71C /* IXNTileBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D3655C031C74757300ABE71C /* IXNTileBoard.m */; };
+		D3655C081C74757300ABE71C /* IXNTileBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3655C051C74757300ABE71C /* IXNTileBoardView.m */; };
+		D3655C0B1C7476E300ABE71C /* tilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3655C0A1C7476E300ABE71C /* tilesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,15 @@
 		D3655BF21C746DE300ABE71C /* gameHiddenObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gameHiddenObjectViewController.swift; sourceTree = "<group>"; };
 		D3655BF31C746DE300ABE71C /* gameHiddenObjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = gameHiddenObjectViewController.xib; sourceTree = "<group>"; };
 		D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = homeTableViewController.swift; sourceTree = "<group>"; };
+		D3655BFE1C74757200ABE71C /* demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		D3655BFF1C74757300ABE71C /* IXNTilePuzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IXNTilePuzzle.h; sourceTree = "<group>"; };
+		D3655C001C74757300ABE71C /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		D3655C011C74757300ABE71C /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		D3655C021C74757300ABE71C /* IXNTileBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IXNTileBoard.h; sourceTree = "<group>"; };
+		D3655C031C74757300ABE71C /* IXNTileBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IXNTileBoard.m; sourceTree = "<group>"; };
+		D3655C041C74757300ABE71C /* IXNTileBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IXNTileBoardView.h; sourceTree = "<group>"; };
+		D3655C051C74757300ABE71C /* IXNTileBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IXNTileBoardView.m; sourceTree = "<group>"; };
+		D3655C0A1C7476E300ABE71C /* tilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tilesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,10 +189,12 @@
 			isa = PBXGroup;
 			children = (
 				D34E2ACC1C72FA5400E7A3E2 /* plane.png */,
+				D3655C091C74757A00ABE71C /* slidepuzzle */,
 				D3655BFB1C746DEA00ABE71C /* gamesHiddenObject */,
 				D3081A1B1C57272F0034A712 /* Splitflap */,
 				D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */,
 				D31ACBC61C0410D3000AF3C7 /* ViewController.swift */,
+				D3655C0A1C7476E300ABE71C /* tilesViewController.swift */,
 				D31ACBC81C0410D3000AF3C7 /* Main.storyboard */,
 				D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */,
 				D31ACBD81C041656000AF3C7 /* duaViewController.swift */,
@@ -187,6 +202,7 @@
 				D31ACBCB1C0410D3000AF3C7 /* Assets.xcassets */,
 				D31ACBCD1C0410D3000AF3C7 /* LaunchScreen.storyboard */,
 				D31ACBD01C0410D3000AF3C7 /* Info.plist */,
+				D3655BFE1C74757200ABE71C /* demo-Bridging-Header.h */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -203,6 +219,20 @@
 				D3655BF31C746DE300ABE71C /* gameHiddenObjectViewController.xib */,
 			);
 			name = gamesHiddenObject;
+			sourceTree = "<group>";
+		};
+		D3655C091C74757A00ABE71C /* slidepuzzle */ = {
+			isa = PBXGroup;
+			children = (
+				D3655BFF1C74757300ABE71C /* IXNTilePuzzle.h */,
+				D3655C001C74757300ABE71C /* UIImage+Resize.h */,
+				D3655C011C74757300ABE71C /* UIImage+Resize.m */,
+				D3655C021C74757300ABE71C /* IXNTileBoard.h */,
+				D3655C031C74757300ABE71C /* IXNTileBoard.m */,
+				D3655C041C74757300ABE71C /* IXNTileBoardView.h */,
+				D3655C051C74757300ABE71C /* IXNTileBoardView.m */,
+			);
+			name = slidepuzzle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,17 +366,21 @@
 				D3081A2B1C57272F0034A712 /* TileView.swift in Sources */,
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
+				D3655C081C74757300ABE71C /* IXNTileBoardView.m in Sources */,
 				D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */,
 				D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */,
 				D3655BFD1C746E5700ABE71C /* homeTableViewController.swift in Sources */,
 				D3081A291C57272F0034A712 /* SplitflapDelegate.swift in Sources */,
 				D3081A261C57272F0034A712 /* FlapViewBuilder.swift in Sources */,
 				D3081A2D1C57272F0034A712 /* TokenParser.swift in Sources */,
+				D3655C061C74757300ABE71C /* UIImage+Resize.m in Sources */,
 				D3081A251C57272F0034A712 /* FlapView.swift in Sources */,
 				D3081A2C1C57272F0034A712 /* TokenGenerator.swift in Sources */,
+				D3655C0B1C7476E300ABE71C /* tilesViewController.swift in Sources */,
 				D31ACBC71C0410D3000AF3C7 /* ViewController.swift in Sources */,
 				D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */,
 				D3081A281C57272F0034A712 /* SplitflapDataSource.swift in Sources */,
+				D3655C071C74757300ABE71C /* IXNTileBoard.m in Sources */,
 				D31ACBD91C041656000AF3C7 /* duaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -518,6 +553,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.originesia.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -526,6 +563,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -534,6 +572,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.originesia.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "demo/demo-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
