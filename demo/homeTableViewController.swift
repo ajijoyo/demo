@@ -10,7 +10,7 @@ import UIKit
 
 class homeTableViewController: UITableViewController {
     
-    let arrMenu = ["splitFlap","hidden object games","tiles games"]
+    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,9 @@ class homeTableViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 2 {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("tilesgames");
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }else if indexPath.row == 3 {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("circleview");
             self.navigationController?.pushViewController(vc!, animated: true)
         }
     }

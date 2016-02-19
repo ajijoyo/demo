@@ -21,6 +21,8 @@
 		D30865541C5D9AB900DBA1AF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30865531C5D9AB900DBA1AF /* TodayViewController.swift */; };
 		D30865571C5D9AB900DBA1AF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30865551C5D9AB900DBA1AF /* MainInterface.storyboard */; };
 		D308655B1C5D9AB900DBA1AF /* usedDisk.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D308654E1C5D9AB900DBA1AF /* usedDisk.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D3164C721C76BC5500606D2B /* circleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3164C711C76BC5500606D2B /* circleViewController.swift */; };
+		D3164C751C76BD2D00606D2B /* circleLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3164C741C76BD2D00606D2B /* circleLoadView.m */; };
 		D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */; };
 		D31ACBC71C0410D3000AF3C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBC61C0410D3000AF3C7 /* ViewController.swift */; };
 		D31ACBCA1C0410D3000AF3C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31ACBC81C0410D3000AF3C7 /* Main.storyboard */; };
@@ -83,6 +85,9 @@
 		D30865531C5D9AB900DBA1AF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D30865561C5D9AB900DBA1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D30865581C5D9AB900DBA1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3164C711C76BC5500606D2B /* circleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleViewController.swift; sourceTree = "<group>"; };
+		D3164C731C76BD2D00606D2B /* circleLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleLoadView.h; sourceTree = "<group>"; };
+		D3164C741C76BD2D00606D2B /* circleLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleLoadView.m; sourceTree = "<group>"; };
 		D31ACBC11C0410D3000AF3C7 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D31ACBC61C0410D3000AF3C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +171,15 @@
 			path = usedDisk;
 			sourceTree = "<group>";
 		};
+		D3164C761C76BD3800606D2B /* circle */ = {
+			isa = PBXGroup;
+			children = (
+				D3164C731C76BD2D00606D2B /* circleLoadView.h */,
+				D3164C741C76BD2D00606D2B /* circleLoadView.m */,
+			);
+			name = circle;
+			sourceTree = "<group>";
+		};
 		D31ACBB81C0410D3000AF3C7 = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +205,10 @@
 				D34E2ACC1C72FA5400E7A3E2 /* plane.png */,
 				D3655C091C74757A00ABE71C /* slidepuzzle */,
 				D3655BFB1C746DEA00ABE71C /* gamesHiddenObject */,
+				D3164C761C76BD3800606D2B /* circle */,
 				D3081A1B1C57272F0034A712 /* Splitflap */,
 				D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */,
+				D3164C711C76BC5500606D2B /* circleViewController.swift */,
 				D31ACBC61C0410D3000AF3C7 /* ViewController.swift */,
 				D3655C0A1C7476E300ABE71C /* tilesViewController.swift */,
 				D31ACBC81C0410D3000AF3C7 /* Main.storyboard */,
@@ -375,12 +391,14 @@
 				D3081A2D1C57272F0034A712 /* TokenParser.swift in Sources */,
 				D3655C061C74757300ABE71C /* UIImage+Resize.m in Sources */,
 				D3081A251C57272F0034A712 /* FlapView.swift in Sources */,
+				D3164C751C76BD2D00606D2B /* circleLoadView.m in Sources */,
 				D3081A2C1C57272F0034A712 /* TokenGenerator.swift in Sources */,
 				D3655C0B1C7476E300ABE71C /* tilesViewController.swift in Sources */,
 				D31ACBC71C0410D3000AF3C7 /* ViewController.swift in Sources */,
 				D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */,
 				D3081A281C57272F0034A712 /* SplitflapDataSource.swift in Sources */,
 				D3655C071C74757300ABE71C /* IXNTileBoard.m in Sources */,
+				D3164C721C76BC5500606D2B /* circleViewController.swift in Sources */,
 				D31ACBD91C041656000AF3C7 /* duaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

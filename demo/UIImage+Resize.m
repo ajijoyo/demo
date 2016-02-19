@@ -26,7 +26,7 @@
 - (UIImage *)cropImageFromFrame:(CGRect)frame
 {
     CGRect destFrame = CGRectMake(0.0, 0.0, frame.size.width, frame.size.height);
-    
+
     CGFloat scale = 1.0;
 	if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
     {

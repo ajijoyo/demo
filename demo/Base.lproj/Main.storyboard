@@ -58,6 +58,24 @@
             </objects>
             <point key="canvasLocation" x="823" y="208"/>
         </scene>
+        <!--Circle View Controller-->
+        <scene sceneID="DfX-DL-Okf">
+            <objects>
+                <viewController storyboardIdentifier="circleview" id="XnM-n7-IPs" customClass="circleViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f2r-GT-2lK"/>
+                        <viewControllerLayoutGuide type="bottom" id="iA3-nn-OUV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1kK-Kq-ZPN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doL-Gh-WVv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="187"/>
+        </scene>
         <!--Jslide Navigator-->
         <scene sceneID="csg-W6-dBF">
             <objects>

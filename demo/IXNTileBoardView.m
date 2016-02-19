@@ -76,6 +76,7 @@ typedef enum {
             if (i == self.board.size && j == self.board.size) continue;
             
             CGRect f = CGRectMake(self.tileWidth * j, self.tileHeight * i, self.tileWidth, self.tileHeight);
+            NSLog(@"%@",NSStringFromCGRect(f));
             UIImageView *tileImageView = [self tileImageViewWithImage:image frame:f];
             
             [slices addObject:tileImageView];
