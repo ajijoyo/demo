@@ -16,6 +16,7 @@ class tilesViewController: UIViewController,IXNTileBoardViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         boardTiles.playWithImage(UIImage(named: "plane"), size: 3)
+        boardTiles.delegate = self
         boardTiles.shuffleTimes(100)
     }
 
@@ -25,7 +26,12 @@ class tilesViewController: UIViewController,IXNTileBoardViewDelegate {
     }
     
     func tileBoardViewDidFinished(tileBoardView: IXNTileBoardView!) {
-        
+        let alert = UIAlertController(title: "finish", message: "selamat", preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "OK", style: .Default, handler: {(alert : UIAlertAction)in
+                self.boardTiles.shuffleTimes(100)
+            })
+        alert.addAction(action)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func tileBoardView(tileBoardView: IXNTileBoardView!, tileDidMove position: CGPoint) {

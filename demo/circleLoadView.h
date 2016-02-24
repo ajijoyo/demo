@@ -20,4 +20,6 @@ typedef void(^circleHandler)();
 @property(nonatomic,assign) CGFloat progress;
 
 -(void)circleLoadDidFinish:(circleHandler)handler;
+-(void)startAnimation;
+-(void)stopAnimation;
 @end

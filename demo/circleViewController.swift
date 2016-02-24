@@ -18,7 +18,7 @@ class circleViewController: UIViewController {
         loading.autoresizingMask = [.FlexibleHeight , .FlexibleWidth]
         loading.progress = 0;
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "loadingProgress", userInfo: nil, repeats: true)
+        let timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "loadingProgress", userInfo: nil, repeats: true)
         
         Image.frame = CGRectMake(0, 0, 200, 200);
         Image.contentMode = .ScaleAspectFit;
@@ -27,8 +27,10 @@ class circleViewController: UIViewController {
         loading.center = Image.center;
         view.addSubview(Image)
         
+        loading.startAnimation()
+        
         loading.circleLoadDidFinish({
-            timer.invalidate()
+//            timer.invalidate()
             print("finish")
         })
     }
@@ -38,7 +40,8 @@ class circleViewController: UIViewController {
     }
     
     func loadingProgress(){
-        loading.progress += 0.1;
+//        loading.progress += 0.1;
+        loading.stopAnimation()
     }
 
     override func didReceiveMemoryWarning() {

@@ -69,6 +69,7 @@ typedef enum {
 {
     NSMutableArray *slices = [NSMutableArray array];
     
+    int k = 1;
     for (int i = 0; i < self.board.size; i++)
     {
         for (int j = 0; j < self.board.size; j++)
@@ -76,20 +77,24 @@ typedef enum {
             if (i == self.board.size && j == self.board.size) continue;
             
             CGRect f = CGRectMake(self.tileWidth * j, self.tileHeight * i, self.tileWidth, self.tileHeight);
-            NSLog(@"%@",NSStringFromCGRect(f));
-            UIImageView *tileImageView = [self tileImageViewWithImage:image frame:f];
             
+            UIImageView *tileImageView = [self tileImageViewWithImage:image frame:f index:k];
             [slices addObject:tileImageView];
+            k++;
         }
     }
-    
     return slices;
 }
 
-- (UIImageView *)tileImageViewWithImage:(UIImage *)image frame:(CGRect)frame
+- (UIImageView *)tileImageViewWithImage:(UIImage *)image frame:(CGRect)frame index:(int)index
 {
     UIImage *tileImage = [image cropImageFromFrame:frame];
     UIImageView *tileImageView = [[UIImageView alloc] initWithImage:tileImage];
+    UILabel *txt = [[UILabel alloc]initWithFrame:CGRectMake(4, 4, 20, 20)];
+    txt.text = [NSString stringWithFormat:@"%d",index];
+    txt.font = [UIFont systemFontOfSize:15];
+    txt.textColor = [UIColor redColor];
+    [tileImageView addSubview:txt];
 //    [tileImageView.layer setShadowColor:[UIColor blackColor].CGColor];
 //    [tileImageView.layer setShadowOpacity:0.65];
 //    [tileImageView.layer setShadowRadius:1.5];

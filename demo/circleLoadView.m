@@ -39,11 +39,12 @@
     circlePathlayer = [CAShapeLayer layer];
     circlePathlayer.frame = self.bounds;
     circlePathlayer.lineWidth = 6;
-    circlePathlayer.fillColor = [UIColor clearColor].CGColor;
+    circlePathlayer.strokeStart = 0;
+    circlePathlayer.fillColor = [UIColor blueColor].CGColor;
     circlePathlayer.strokeColor = [UIColor redColor].CGColor;
     
     [self.layer addSublayer:circlePathlayer];
-    self.backgroundColor = [UIColor grayColor];
+    self.backgroundColor = [UIColor clearColor];
     
 }
 
@@ -76,6 +77,25 @@
     [super layoutSubviews];
     circlePathlayer.frame = self.bounds;
     circlePathlayer.path = [self circlePath].CGPath;
+}
+
+-(void)startAnimation{
+    circlePathlayer.strokeEnd = 0.5;
+    CABasicAnimation *spin = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    spin.repeatCount = INFINITY;
+    spin.duration = 3;
+    spin.byValue = [NSNumber numberWithFloat:2.0 * M_PI];
+    [circlePathlayer addAnimation:spin forKey:@"spinanimation"];
+
+}
+-(void)stopAnimation{
+    [circlePathlayer removeAnimationForKey:@"spinanimation"];
+    CABasicAnimation *spin = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    spin.repeatCount = 1;
+    spin.duration = 1;
+    spin.byValue = [NSNumber numberWithFloat:2.0 * M_PI];
+    [circlePathlayer addAnimation:spin forKey:@"spinanimation"];
+
 }
 
 #pragma mark - getter setter progress
