@@ -21,6 +21,8 @@
 		D30865541C5D9AB900DBA1AF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30865531C5D9AB900DBA1AF /* TodayViewController.swift */; };
 		D30865571C5D9AB900DBA1AF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30865551C5D9AB900DBA1AF /* MainInterface.storyboard */; };
 		D308655B1C5D9AB900DBA1AF /* usedDisk.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D308654E1C5D9AB900DBA1AF /* usedDisk.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D3111BB41C800FC8008772A3 /* URLsession.m in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB31C800FC8008772A3 /* URLsession.m */; };
+		D3111BB71C8027D1008772A3 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3111BB61C8027D1008772A3 /* LoginView.xib */; };
 		D3164C721C76BC5500606D2B /* circleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3164C711C76BC5500606D2B /* circleViewController.swift */; };
 		D3164C751C76BD2D00606D2B /* circleLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3164C741C76BD2D00606D2B /* circleLoadView.m */; };
 		D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */; };
@@ -85,6 +87,9 @@
 		D30865531C5D9AB900DBA1AF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D30865561C5D9AB900DBA1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D30865581C5D9AB900DBA1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3111BB21C800FC8008772A3 /* URLsession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLsession.h; sourceTree = "<group>"; };
+		D3111BB31C800FC8008772A3 /* URLsession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLsession.m; sourceTree = "<group>"; };
+		D3111BB61C8027D1008772A3 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		D3164C711C76BC5500606D2B /* circleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleViewController.swift; sourceTree = "<group>"; };
 		D3164C731C76BD2D00606D2B /* circleLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleLoadView.h; sourceTree = "<group>"; };
 		D3164C741C76BD2D00606D2B /* circleLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleLoadView.m; sourceTree = "<group>"; };
@@ -171,6 +176,15 @@
 			path = usedDisk;
 			sourceTree = "<group>";
 		};
+		D3111BB51C800FCE008772A3 /* URLsession */ = {
+			isa = PBXGroup;
+			children = (
+				D3111BB21C800FC8008772A3 /* URLsession.h */,
+				D3111BB31C800FC8008772A3 /* URLsession.m */,
+			);
+			name = URLsession;
+			sourceTree = "<group>";
+		};
 		D3164C761C76BD3800606D2B /* circle */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +226,7 @@
 				D31ACBC61C0410D3000AF3C7 /* ViewController.swift */,
 				D3655C0A1C7476E300ABE71C /* tilesViewController.swift */,
 				D31ACBC81C0410D3000AF3C7 /* Main.storyboard */,
+				D3111BB61C8027D1008772A3 /* LoginView.xib */,
 				D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */,
 				D31ACBD81C041656000AF3C7 /* duaViewController.swift */,
 				D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */,
@@ -219,6 +234,7 @@
 				D31ACBCD1C0410D3000AF3C7 /* LaunchScreen.storyboard */,
 				D31ACBD01C0410D3000AF3C7 /* Info.plist */,
 				D3655BFE1C74757200ABE71C /* demo-Bridging-Header.h */,
+				D3111BB51C800FCE008772A3 /* URLsession */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 				D3655BF51C746DE300ABE71C /* roundedLogo.png in Resources */,
 				D3655BFA1C746DE300ABE71C /* gameHiddenObjectViewController.xib in Resources */,
 				D3655BF41C746DE300ABE71C /* Wallpaper-686.jpg in Resources */,
+				D3111BB71C8027D1008772A3 /* LoginView.xib in Resources */,
 				D34E2ACD1C72FA5400E7A3E2 /* plane.png in Resources */,
 				D3655BF81C746DE300ABE71C /* planet.png in Resources */,
 				D31ACBCF1C0410D3000AF3C7 /* LaunchScreen.storyboard in Resources */,
@@ -381,6 +398,7 @@
 			files = (
 				D3081A2B1C57272F0034A712 /* TileView.swift in Sources */,
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
+				D3111BB41C800FC8008772A3 /* URLsession.m in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
 				D3655C081C74757300ABE71C /* IXNTileBoardView.m in Sources */,
 				D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */,
