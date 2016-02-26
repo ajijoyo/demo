@@ -23,6 +23,7 @@
 		D308655B1C5D9AB900DBA1AF /* usedDisk.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D308654E1C5D9AB900DBA1AF /* usedDisk.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D3111BB41C800FC8008772A3 /* URLsession.m in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB31C800FC8008772A3 /* URLsession.m */; };
 		D3111BB71C8027D1008772A3 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3111BB61C8027D1008772A3 /* LoginView.xib */; };
+		D3111BB91C804B09008772A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB81C804B09008772A3 /* LoginView.swift */; };
 		D3164C721C76BC5500606D2B /* circleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3164C711C76BC5500606D2B /* circleViewController.swift */; };
 		D3164C751C76BD2D00606D2B /* circleLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3164C741C76BD2D00606D2B /* circleLoadView.m */; };
 		D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */; };
@@ -90,6 +91,7 @@
 		D3111BB21C800FC8008772A3 /* URLsession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLsession.h; sourceTree = "<group>"; };
 		D3111BB31C800FC8008772A3 /* URLsession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLsession.m; sourceTree = "<group>"; };
 		D3111BB61C8027D1008772A3 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		D3111BB81C804B09008772A3 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3164C711C76BC5500606D2B /* circleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleViewController.swift; sourceTree = "<group>"; };
 		D3164C731C76BD2D00606D2B /* circleLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleLoadView.h; sourceTree = "<group>"; };
 		D3164C741C76BD2D00606D2B /* circleLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleLoadView.m; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				D3655C0A1C7476E300ABE71C /* tilesViewController.swift */,
 				D31ACBC81C0410D3000AF3C7 /* Main.storyboard */,
 				D3111BB61C8027D1008772A3 /* LoginView.xib */,
+				D3111BB81C804B09008772A3 /* LoginView.swift */,
 				D3655BFC1C746E5700ABE71C /* homeTableViewController.swift */,
 				D31ACBD81C041656000AF3C7 /* duaViewController.swift */,
 				D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */,
@@ -400,6 +403,7 @@
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
 				D3111BB41C800FC8008772A3 /* URLsession.m in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
+				D3111BB91C804B09008772A3 /* LoginView.swift in Sources */,
 				D3655C081C74757300ABE71C /* IXNTileBoardView.m in Sources */,
 				D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */,
 				D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */,

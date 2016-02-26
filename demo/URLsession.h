@@ -17,10 +17,10 @@ typedef void (^sessionHandler)();
 
 @interface URLsession : NSObject
 {
-    NSURLSession *session;
-    NSMutableArray *queue;
     sessionHandler actionSession;
 }
+@property(nonatomic,strong) NSURLSession *session;
+@property(nonatomic,strong)NSMutableArray *queue;
 
 /** get n SET timeout request */
 @property(nonatomic,assign)NSTimeInterval timeOut;

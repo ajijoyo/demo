@@ -9,6 +9,8 @@
 #import "URLsession.h"
 
 @implementation URLsession
+@synthesize queue;
+@synthesize session;
 
 +(instancetype)sharedInstance{
     static URLsession *shared;
@@ -22,6 +24,10 @@
 -(id)init{
     if (self==[super init]) {
         queue = [NSMutableArray array];
+        NSURLSessionConfiguration *configSession = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configSession.timeoutIntervalForRequest = 30;
+        configSession.timeoutIntervalForResource = 30;
+        self.session = [NSURLSession sessionWithConfiguration:configSession];
         self.timeOut = 30.0;
     }
     return self;
@@ -31,6 +37,16 @@
     actionSession = handler;
 }
 
+-(NSInteger)sessionQueue{
+    int i = 0;
+    for (NSURLSessionDataTask *dataTask in queue) {
+        if (dataTask.state == NSURLSessionTaskStateRunning) {
+            i++;
+        }
+    }
+    return i;
+}
+
 -(void)clearAllSession{
     for (NSURLSessionDataTask *dataTask in queue) {
         [dataTask cancel];
@@ -38,14 +54,15 @@
 }
 
 -(void)sentURL:(NSString*)urlString Methods:(Methods)methods withParams:(NSDictionary*)params blocks:(void(^)(id messageResponse,NSURLResponse *urlResponse,NSError *error))blocks{
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:self.timeOut];
     if (methods==GET) {
         request.HTTPMethod = @"GET";
     }else if (methods==POST){
         request.HTTPMethod = @"POST";
     }
-    
-    NSAssert(params==nil, @"parameter cannot be nil!!!");
+
+//    NSAssert(params==nil, @"parameter cannot be nil!!!");
     NSError *error;
     NSData *parsingData = [NSJSONSerialization dataWithJSONObject:params
                                     options:NSJSONWritingPrettyPrinted
@@ -61,7 +78,7 @@
                                             completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
 
         id responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                                                blocks(responseData,response,error);
+        blocks(responseData,response,error);
         if (self.sessionQueue == 0) {
             if (actionSession) {
                 actionSession();

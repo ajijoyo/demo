@@ -26,6 +26,15 @@ class homeTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        
+        let logIn = loginviewControl(frame: CGRectZero);
+        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
+            print("respon :\(respon)\nerror : \(error)");
+        })
+    }
 
     // MARK: - Table view data source
 
