@@ -16,8 +16,8 @@ class LoginView: UIView {
     @IBOutlet weak var username : UITextField!;
     @IBOutlet weak var password : UITextField!;
     @IBOutlet weak var loginBttn : UIButton!;
-    
     @IBOutlet weak var closeBttn : UIButton!;
+    @IBOutlet weak var indicator : UIActivityIndicatorView!;
     
     var action : loginHandler? = nil;
     
@@ -49,16 +49,34 @@ class LoginView: UIView {
         closeBttn.addTarget(self, action: "hide", forControlEvents: .TouchUpInside);
         self.layer.masksToBounds = true;
         self.layer.cornerRadius = 5;
+        
+        indicator.stopAnimating();
     }
     
     func signIn(){
-        if username.text?.isEmpty != nil && password.text?.isEmpty != nil {
-            URLsession.sharedInstance().sentURL(URLlogin, methods: POST, withParams:["username":username.text!,"password":password.text!] , blocks: {(respon :AnyObject!,urlRespon :NSURLResponse! , error : NSError!)in
-                if (self.action != nil) {
-                    self.action!(respon: respon,error:  error);
-                }
-            });
+        if loginBttn.enabled {
+            if username.text?.characters.count != 0 && password.text?.characters.count != 0 {
+                self.endEditing(true);
+                username.enabled = false;
+                password.enabled = false;
+                indicator.startAnimating();
+                loginBttn.enabled = false;
+                
+                URLsession.sharedInstance().sentURL(URLlogin, methods: POST, withParams:["username":username.text!,"password":password.text!] , blocks: {[unowned self](respon :AnyObject!,urlRespon :NSURLResponse! , error : NSError!)in
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.username.enabled = true;
+                        self.password.enabled = true;
+                        self.indicator.stopAnimating();
+                        self.loginBttn.enabled = true;
+                    });
+                    
+                    if (self.action != nil) {
+                        self.action!(respon: respon,error:  error);
+                    }
+                    });
+            }
         }
+        
     }
     
     func hide(){
@@ -90,8 +108,19 @@ class loginviewControl : UIView {
                 self.action!(respon: respon,error:  error);
             }
         })
-        
+        let tap = UITapGestureRecognizer(target: self, action: "hiddenkeyboard");
+        self.addGestureRecognizer(tap);
         self.addSubview(login);
+    }
+    func hiddenkeyboard(){
+        self.endEditing(true);
+    }
+    
+    func hide(){
+        dispatch_async(dispatch_get_main_queue(), {
+            self.endEditing(true);
+            self.removeFromSuperview();
+        });
     }
     
     func show(handler : loginHandler){
@@ -103,7 +132,6 @@ class loginviewControl : UIView {
         self.frame = (UIApplication.sharedApplication().keyWindow?.bounds)!;
         login.frame = CGRectMake(0, 60, 300, 200);
         login.center.x = self.center.x;
-        print(login.frame);
 
     }
 

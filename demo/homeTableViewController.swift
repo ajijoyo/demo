@@ -14,12 +14,15 @@ class homeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let logIn = loginviewControl(frame: CGRectZero);
+        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
+            if let code = respon.objectForKey("responseCode"){
+                if code.integerValue == 00{
+                    logIn.hide();
+                }
+            }
+            })
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,11 +32,6 @@ class homeTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
-        
-        let logIn = loginviewControl(frame: CGRectZero);
-        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
-            print("respon :\(respon)\nerror : \(error)");
-        })
     }
 
     // MARK: - Table view data source
