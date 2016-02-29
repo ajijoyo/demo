@@ -21,6 +21,7 @@
 		D30865541C5D9AB900DBA1AF /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30865531C5D9AB900DBA1AF /* TodayViewController.swift */; };
 		D30865571C5D9AB900DBA1AF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30865551C5D9AB900DBA1AF /* MainInterface.storyboard */; };
 		D308655B1C5D9AB900DBA1AF /* usedDisk.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D308654E1C5D9AB900DBA1AF /* usedDisk.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D30B59281C83F75A0093509F /* shakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D30B59271C83F75A0093509F /* shakeView.m */; };
 		D3111BB41C800FC8008772A3 /* URLsession.m in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB31C800FC8008772A3 /* URLsession.m */; };
 		D3111BB71C8027D1008772A3 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3111BB61C8027D1008772A3 /* LoginView.xib */; };
 		D3111BB91C804B09008772A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB81C804B09008772A3 /* LoginView.swift */; };
@@ -88,6 +89,8 @@
 		D30865531C5D9AB900DBA1AF /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D30865561C5D9AB900DBA1AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		D30865581C5D9AB900DBA1AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30B59261C83F75A0093509F /* shakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shakeView.h; sourceTree = "<group>"; };
+		D30B59271C83F75A0093509F /* shakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shakeView.m; sourceTree = "<group>"; };
 		D3111BB21C800FC8008772A3 /* URLsession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLsession.h; sourceTree = "<group>"; };
 		D3111BB31C800FC8008772A3 /* URLsession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLsession.m; sourceTree = "<group>"; };
 		D3111BB61C8027D1008772A3 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -238,6 +241,8 @@
 				D31ACBD01C0410D3000AF3C7 /* Info.plist */,
 				D3655BFE1C74757200ABE71C /* demo-Bridging-Header.h */,
 				D3111BB51C800FCE008772A3 /* URLsession */,
+				D30B59261C83F75A0093509F /* shakeView.h */,
+				D30B59271C83F75A0093509F /* shakeView.m */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				D3111BB41C800FC8008772A3 /* URLsession.m in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
 				D3111BB91C804B09008772A3 /* LoginView.swift in Sources */,
+				D30B59281C83F75A0093509F /* shakeView.m in Sources */,
 				D3655C081C74757300ABE71C /* IXNTileBoardView.m in Sources */,
 				D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */,
 				D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */,

@@ -17,9 +17,11 @@ class homeTableViewController: UITableViewController {
         
         let logIn = loginviewControl(frame: CGRectZero);
         logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
-            if let code = respon.objectForKey("responseCode"){
+            if let code = respon.objectForKey("responseCode") as? NSString{
                 if code.integerValue == 00{
                     logIn.hide();
+                }else{
+                    logIn.shake();
                 }
             }
             })

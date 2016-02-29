@@ -116,6 +116,11 @@ class loginviewControl : UIView {
         self.endEditing(true);
     }
     
+    func shake(){
+        login.username.shakeView();
+        login.password.shakeView();
+    }
+    
     func hide(){
         dispatch_async(dispatch_get_main_queue(), {
             self.endEditing(true);
