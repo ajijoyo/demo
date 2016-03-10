@@ -34,6 +34,7 @@
 		D31ACBCF1C0410D3000AF3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31ACBCD1C0410D3000AF3C7 /* LaunchScreen.storyboard */; };
 		D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */; };
 		D31ACBD91C041656000AF3C7 /* duaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBD81C041656000AF3C7 /* duaViewController.swift */; };
+		D31B8ACC1C8FD8D500B0E2DF /* rectangleLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31B8ACB1C8FD8D500B0E2DF /* rectangleLoadView.m */; };
 		D34E2ACD1C72FA5400E7A3E2 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = D34E2ACC1C72FA5400E7A3E2 /* plane.png */; };
 		D3655BF41C746DE300ABE71C /* Wallpaper-686.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3655BED1C746DE300ABE71C /* Wallpaper-686.jpg */; };
 		D3655BF51C746DE300ABE71C /* roundedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D3655BEE1C746DE300ABE71C /* roundedLogo.png */; };
@@ -107,6 +108,8 @@
 		D31ACBD01C0410D3000AF3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJslideNavigator.swift; sourceTree = "<group>"; };
 		D31ACBD81C041656000AF3C7 /* duaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = duaViewController.swift; sourceTree = "<group>"; };
+		D31B8ACA1C8FD8D500B0E2DF /* rectangleLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rectangleLoadView.h; sourceTree = "<group>"; };
+		D31B8ACB1C8FD8D500B0E2DF /* rectangleLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rectangleLoadView.m; sourceTree = "<group>"; };
 		D34E2ACC1C72FA5400E7A3E2 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
 		D3655BED1C746DE300ABE71C /* Wallpaper-686.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wallpaper-686.jpg"; sourceTree = "<group>"; };
 		D3655BEE1C746DE300ABE71C /* roundedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roundedLogo.png; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 			children = (
 				D3164C731C76BD2D00606D2B /* circleLoadView.h */,
 				D3164C741C76BD2D00606D2B /* circleLoadView.m */,
+				D31B8ACA1C8FD8D500B0E2DF /* rectangleLoadView.h */,
+				D31B8ACB1C8FD8D500B0E2DF /* rectangleLoadView.m */,
 			);
 			name = circle;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				D3081A2B1C57272F0034A712 /* TileView.swift in Sources */,
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
 				D3111BB41C800FC8008772A3 /* URLsession.m in Sources */,
+				D31B8ACC1C8FD8D500B0E2DF /* rectangleLoadView.m in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
 				D3111BB91C804B09008772A3 /* LoginView.swift in Sources */,
 				D30B59281C83F75A0093509F /* shakeView.m in Sources */,

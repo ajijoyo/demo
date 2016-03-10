@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView(shakeView)
-
+/** shake view (-10.f to 10.f) */
 -(void)shakeView;
+@end
+
+
+
+
+@interface METHODS : NSObject
+
+/** perform blocks with delay (CGFloat) */
++(void)performWithDelay:(CGFloat)delay blocks:(void(^)())blocks;
+
 @end

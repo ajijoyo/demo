@@ -51,29 +51,34 @@
                     </constraints>
                     <state key="normal" title="Button" image="planet.png"/>
                 </button>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8i3-nn-JMl">
-                    <rect key="frame" x="206" y="135" width="20" height="20"/>
-                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3d-XX-JgD" customClass="rectangleLoadView">
+                    <rect key="frame" x="198" y="137.5" width="15" height="15"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="WNR-sR-Vz4"/>
+                        <constraint firstAttribute="width" constant="15" id="x9D-KP-pxb"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="BWr-l1-6RQ" firstAttribute="top" secondItem="LEM-wZ-nn2" secondAttribute="bottom" constant="7.5" id="94N-YX-LhC"/>
+                <constraint firstItem="y3d-XX-JgD" firstAttribute="leading" secondItem="OF8-N1-wzc" secondAttribute="trailing" constant="8" id="FL3-4F-Ozk"/>
                 <constraint firstItem="mLF-0r-tx1" firstAttribute="top" secondItem="BWr-l1-6RQ" secondAttribute="bottom" constant="12" id="Fj6-zY-6Uq"/>
-                <constraint firstItem="8i3-nn-JMl" firstAttribute="leading" secondItem="OF8-N1-wzc" secondAttribute="trailing" constant="16" id="HJf-6Y-KD4"/>
                 <constraint firstItem="LEM-wZ-nn2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="I1F-gJ-Gje"/>
+                <constraint firstItem="y3d-XX-JgD" firstAttribute="centerY" secondItem="OF8-N1-wzc" secondAttribute="centerY" id="Ms7-2T-x00"/>
                 <constraint firstItem="OF8-N1-wzc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SFQ-xR-3qo"/>
                 <constraint firstItem="mLF-0r-tx1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T1b-18-vOL"/>
                 <constraint firstItem="fzs-ff-2T9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="UKF-W1-BvQ"/>
                 <constraint firstAttribute="trailing" secondItem="fzs-ff-2T9" secondAttribute="trailing" constant="8" id="fwv-mX-iTf"/>
                 <constraint firstItem="LEM-wZ-nn2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gxy-GL-ipu"/>
-                <constraint firstItem="8i3-nn-JMl" firstAttribute="centerY" secondItem="OF8-N1-wzc" secondAttribute="centerY" id="hzm-r6-oP7"/>
                 <constraint firstItem="OF8-N1-wzc" firstAttribute="top" secondItem="mLF-0r-tx1" secondAttribute="bottom" constant="14" id="uQV-zC-VAS"/>
                 <constraint firstItem="BWr-l1-6RQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zwu-Sq-A9B"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="closeBttn" destination="fzs-ff-2T9" id="CIT-ZO-iqL"/>
-                <outlet property="indicator" destination="8i3-nn-JMl" id="x6s-TI-f0I"/>
+                <outlet property="indicator" destination="y3d-XX-JgD" id="Djo-AN-MXu"/>
                 <outlet property="loginBttn" destination="OF8-N1-wzc" id="adA-sW-46B"/>
                 <outlet property="password" destination="mLF-0r-tx1" id="SgC-nk-Q34"/>
                 <outlet property="username" destination="BWr-l1-6RQ" id="ebg-iN-hVk"/>

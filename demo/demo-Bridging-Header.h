@@ -7,3 +7,4 @@
 #import "circleLoadView.h"
 #import "URLsession.h"
 #import "shakeView.h"
+#import "rectangleLoadView.h"

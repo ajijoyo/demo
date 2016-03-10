@@ -28,6 +28,18 @@
         [animation setToValue:[NSNumber numberWithFloat:+10.0f]];
         [self.layer addAnimation:animation forKey:@"transform.translation.x"];
     });
+}
+
+@end
+
+@implementation METHODS
+
++(void)performWithDelay:(CGFloat)delay blocks:(void(^)())blocks{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (blocks) {
+            blocks();
+        }
+    });
     
 }
 

@@ -13,26 +13,45 @@ class circleViewController: UIViewController {
     let loading = circleLoadView(frame: CGRect(x: 100, y: 200, width: 200, height: 200))
     let Image = UIImageView(image: UIImage(named: "Wallpaper-686.jpg"))
     
+    let rectLo = rectangleLoadView(frame: CGRect(x: 100, y: 200, width: 30, height: 30))
+    
+    var timer : NSTimer!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loading.autoresizingMask = [.FlexibleHeight , .FlexibleWidth]
         loading.progress = 0;
         
-        let timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: "loadingProgress", userInfo: nil, repeats: true)
+        
         
         Image.frame = CGRectMake(0, 0, 200, 200);
         Image.contentMode = .ScaleAspectFit;
-        Image.addSubview(loading)
+//        Image.addSubview(loading)
         
         loading.center = Image.center;
-        view.addSubview(Image)
+//        view.addSubview(Image)
         
         loading.startAnimation()
         
         loading.circleLoadDidFinish({
-//            timer.invalidate()
             print("finish")
         })
+        
+        rectLo.radiusRect = 8;
+//        rectLo.isRotate = false;
+        
+        rectLo.center = self.view.center;
+        view.addSubview(rectLo);
+        
+//        timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "loadingProgress", userInfo: nil, repeats: true)
+        
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        rectLo.startAnimation();
     }
     
     override func viewWillLayoutSubviews() {
@@ -40,8 +59,8 @@ class circleViewController: UIViewController {
     }
     
     func loadingProgress(){
-//        loading.progress += 0.1;
-        loading.stopAnimation()
+//        rectLo.progress += 0.2;
+        rectLo.stopAnimation()
     }
 
     override func didReceiveMemoryWarning() {

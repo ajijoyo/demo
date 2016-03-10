@@ -17,7 +17,7 @@ class LoginView: UIView {
     @IBOutlet weak var password : UITextField!;
     @IBOutlet weak var loginBttn : UIButton!;
     @IBOutlet weak var closeBttn : UIButton!;
-    @IBOutlet weak var indicator : UIActivityIndicatorView!;
+    @IBOutlet weak var indicator : rectangleLoadView!;
     
     var action : loginHandler? = nil;
     
@@ -50,7 +50,7 @@ class LoginView: UIView {
         self.layer.masksToBounds = true;
         self.layer.cornerRadius = 5;
         
-        indicator.stopAnimating();
+        
     }
     
     func signIn(){
@@ -59,14 +59,14 @@ class LoginView: UIView {
                 self.endEditing(true);
                 username.enabled = false;
                 password.enabled = false;
-                indicator.startAnimating();
+                indicator.startAnimation();
                 loginBttn.enabled = false;
                 
                 URLsession.sharedInstance().sentURL(URLlogin, methods: POST, withParams:["username":username.text!,"password":password.text!] , blocks: {[unowned self](respon :AnyObject!,urlRespon :NSURLResponse! , error : NSError!)in
                     dispatch_async(dispatch_get_main_queue(), {
                         self.username.enabled = true;
                         self.password.enabled = true;
-                        self.indicator.stopAnimating();
+                        self.indicator.stopAnimation();
                         self.loginBttn.enabled = true;
                     });
                     
@@ -117,8 +117,7 @@ class loginviewControl : UIView {
     }
     
     func shake(){
-        login.username.shakeView();
-        login.password.shakeView();
+        login.shakeView();
     }
     
     func hide(){

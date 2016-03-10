@@ -61,8 +61,6 @@
     }else if (methods==POST){
         request.HTTPMethod = @"POST";
     }
-
-//    NSAssert(params==nil, @"parameter cannot be nil!!!");
     NSError *error;
     NSData *parsingData = [NSJSONSerialization dataWithJSONObject:params
                                     options:NSJSONWritingPrettyPrinted
@@ -76,16 +74,17 @@
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:^(NSData *data,NSURLResponse *response,NSError *error){
-
-        id responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        blocks(responseData,response,error);
-        if (self.sessionQueue == 0) {
-            if (actionSession) {
-                actionSession();
+        if (data) {
+            id responseData = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            blocks(responseData,response,error);
+            if (self.sessionQueue == 0) {
+                if (actionSession) {
+                    actionSession();
+                }
             }
         }
-                                                
-                                            }];
+        
+    }];
     [queue addObject:task];
     [task resume];
 }
