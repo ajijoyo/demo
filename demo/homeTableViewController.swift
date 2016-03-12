@@ -10,14 +10,13 @@ import UIKit
 
 class homeTableViewController: UITableViewController {
     
-    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load"]
+    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load","Colorize","Test Arc"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let logIn = loginviewControl(frame: CGRectZero);
         logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
-
             if let code = respon.objectForKey("responseCode") as? NSString{
                 if code.integerValue == 00{
                     logIn.hide();
@@ -72,6 +71,12 @@ class homeTableViewController: UITableViewController {
         }else if indexPath.row == 3 {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("circleview");
             self.navigationController?.pushViewController(vc!, animated: true)
+        }else if indexPath.row == 4{
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("colorize");
+            self.navigationController?.pushViewController(vc!, animated: true);
+        }else if indexPath.row == 5{
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("testarc");
+            self.navigationController?.pushViewController(vc!, animated: true);
         }
     }
 

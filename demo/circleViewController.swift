@@ -11,56 +11,49 @@ import UIKit
 class circleViewController: UIViewController {
     
     let loading = circleLoadView(frame: CGRect(x: 100, y: 200, width: 200, height: 200))
-    let Image = UIImageView(image: UIImage(named: "Wallpaper-686.jpg"))
+    var Image : UIImageView? = nil;
     
     let rectLo = rectangleLoadView(frame: CGRect(x: 100, y: 200, width: 30, height: 30))
+    let rectInfit = rectangleLoadView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+    @IBOutlet weak var bttn :shapeBttn!
     
     var timer : NSTimer!;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loading.autoresizingMask = [.FlexibleHeight , .FlexibleWidth]
-        loading.progress = 0;
         
-        
-        
-        Image.frame = CGRectMake(0, 0, 200, 200);
-        Image.contentMode = .ScaleAspectFit;
-//        Image.addSubview(loading)
-        
-        loading.center = Image.center;
-//        view.addSubview(Image)
-        
-        loading.startAnimation()
-        
-        loading.circleLoadDidFinish({
-            print("finish")
+        rectLo.startAnimationonComplete({
+            print("finish");
+            self.timer.invalidate();
+            self.rectInfit.stopAnimation();
         })
-        
-        rectLo.radiusRect = 8;
-//        rectLo.isRotate = false;
-        
         rectLo.center = self.view.center;
-        view.addSubview(rectLo);
+        self.view.addSubview(rectLo);
         
-//        timer = NSTimer.scheduledTimerWithTimeInterval(3, target: self, selector: "loadingProgress", userInfo: nil, repeats: true)
+        rectInfit.startAnimation();
+        rectInfit.center = self.view.center;
+        rectInfit.center.y += 50;
+        self.view.addSubview(rectInfit);
         
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "loadingProgress", userInfo: nil, repeats: true);
         
+        bttn.addTarget(self, action: "plusClicked:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        rectLo.startAnimation();
+    }
+    @IBAction func plusClicked(sender:shapeBttn){
+        sender.selected = !sender.selected;
     }
     
     override func viewWillLayoutSubviews() {
-        Image.center = self.view.center;
+        Image?.center = self.view.center;
     }
     
     func loadingProgress(){
-//        rectLo.progress += 0.2;
-        rectLo.stopAnimation()
+        rectLo.progress += 0.1;
     }
 
     override func didReceiveMemoryWarning() {

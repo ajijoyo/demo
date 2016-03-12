@@ -25,7 +25,7 @@
     return self;
 }
 -(void)awakeFromNib{
-    [self setup];
+//    [self setup];
 }
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self==[super initWithFrame:frame]) {
@@ -35,10 +35,11 @@
 }
 
 -(void)setup{
-    circleRadius = 20;
+    _circleRadius = 20;
+    _lineWidth = 6;
     circlePathlayer = [CAShapeLayer layer];
     circlePathlayer.frame = self.bounds;
-    circlePathlayer.lineWidth = 6;
+    circlePathlayer.lineWidth = _lineWidth;
     circlePathlayer.strokeStart = 0;
     circlePathlayer.fillColor = [UIColor blueColor].CGColor;
     circlePathlayer.strokeColor = [UIColor redColor].CGColor;
@@ -63,7 +64,7 @@
 }
 
 -(CGRect)circleFrame{
-    CGRect rect = CGRectMake(0, 0, circleRadius * 2, circleRadius * 2);
+    CGRect rect = CGRectMake(0, 0, _circleRadius * 2, _circleRadius * 2);
     rect.origin.x = CGRectGetMidX(circlePathlayer.bounds) - CGRectGetMidX(rect);
     rect.origin.y = CGRectGetMidY(circlePathlayer.bounds) - CGRectGetMidY(rect);
     return rect;

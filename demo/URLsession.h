@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
     POST = 1,
@@ -14,10 +15,12 @@ typedef enum : NSUInteger {
 } Methods;
 
 typedef void (^sessionHandler)();
+typedef void(^sessionProgressHandler) (CGFloat progress);
 
-@interface URLsession : NSObject
+@interface URLsession : NSObject<NSURLSessionDelegate,NSURLSessionTaskDelegate,NSURLSessionDataDelegate>
 {
     sessionHandler actionSession;
+    sessionProgressHandler actionProgress;
 }
 @property(nonatomic,strong) NSURLSession *session;
 @property(nonatomic,strong)NSMutableArray *queue;

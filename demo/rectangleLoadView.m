@@ -88,7 +88,7 @@
     anim.duration = 0.2;
     anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     anim.byValue = [NSNumber numberWithFloat:_radiusRect];
-    anim.toValue = [NSNumber numberWithFloat:10];
+    anim.toValue = [NSNumber numberWithFloat:_radiusRect*1.5];
     
     group.animations = @[anim];
     

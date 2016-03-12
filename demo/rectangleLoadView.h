@@ -8,21 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 typedef void (^rectangleHandler)();
 
 @interface rectangleLoadView : UIView
 {
     CAShapeLayer * rectPathlayer;
     rectangleHandler action;
-    
-    CABasicAnimation *anim1,*anim2,*anim3,*anim4,*anim5;
 }
 
-@property(nonatomic,assign) CGFloat boundsRect;
-@property(nonatomic,assign) CGFloat radiusRect;
-@property(nonatomic,assign) CGFloat progress;
-@property(nonatomic,weak) UIColor *strokeColor;
-@property(nonatomic,assign) BOOL isRotate;
+@property(nonatomic,assign)IBInspectable CGFloat boundsRect;
+@property(nonatomic,assign)IBInspectable CGFloat radiusRect;
+@property(nonatomic,assign)IBInspectable CGFloat progress;
+@property(nonatomic,weak)IBInspectable UIColor *strokeColor;
+@property(nonatomic,assign)IBInspectable BOOL isRotate;
 /** 
  call when using progress 0 - 1 DO NOT CALL 'startAnimation'
  */

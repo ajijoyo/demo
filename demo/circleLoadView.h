@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+IB_DESIGNABLE
 typedef void(^circleHandler)();
 
 @interface circleLoadView : UIView
 {
     CAShapeLayer * circlePathlayer;
-    CGFloat circleRadius;
     circleHandler action;
 
 }
+@property(nonatomic,assign) IBInspectable CGFloat circleRadius;
+@property(nonatomic,assign) IBInspectable CGFloat lineWidth;
 @property(nonatomic,assign) CGFloat progress;
 
 -(void)circleLoadDidFinish:(circleHandler)handler;

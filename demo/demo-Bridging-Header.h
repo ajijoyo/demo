@@ -8,3 +8,7 @@
 #import "URLsession.h"
 #import "shakeView.h"
 #import "rectangleLoadView.h"
+#import "UIImageView+URLsession.h"
+#import "ArcViewController.h"
+#import "drawPath.h"
+#import "shapeBttn.h"

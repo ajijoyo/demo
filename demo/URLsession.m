@@ -23,12 +23,14 @@
 
 -(id)init{
     if (self==[super init]) {
+        self.timeOut = 30.0;
         queue = [NSMutableArray array];
         NSURLSessionConfiguration *configSession = [NSURLSessionConfiguration defaultSessionConfiguration];
-        configSession.timeoutIntervalForRequest = 30;
-        configSession.timeoutIntervalForResource = 30;
+        configSession.timeoutIntervalForRequest = self.timeOut;
+        configSession.timeoutIntervalForResource = self.timeOut;
         self.session = [NSURLSession sessionWithConfiguration:configSession];
-        self.timeOut = 30.0;
+        
+        
     }
     return self;
 }

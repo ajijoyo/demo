@@ -10,6 +10,9 @@
 
 @interface UIView(shakeView)
 /** shake view (-10.f to 10.f) */
+{
+
+}
 -(void)shakeView;
 @end
 
