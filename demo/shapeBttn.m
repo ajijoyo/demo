@@ -17,7 +17,7 @@
     UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:rect];
     [_fillColor setFill];
     [path fill];
-    
+//    [self line];
 }
 
 -(void)awakeFromNib{
@@ -55,10 +55,11 @@
     if (!selected) {
         CABasicAnimation *morph = [CABasicAnimation animationWithKeyPath:@"path"];
         morph.duration = 0.5;
+        morph.fromValue = (id)[self normal];
         morph.toValue = (id)[self setSelectedPath];
         morph.fillMode = kCAFillModeForwards;
         morph.removedOnCompletion = NO;
-        [line addAnimation:morph forKey:@"path"];
+        [line addAnimation:morph forKey:morph.keyPath];
         selected = YES;
     }else{
         CABasicAnimation *morph = [CABasicAnimation animationWithKeyPath:@"path"];
@@ -67,7 +68,7 @@
         morph.byValue = (id)[self normal];
         morph.fillMode = kCAFillModeForwards;
         morph.removedOnCompletion = NO;
-        [line addAnimation:morph forKey:@"path"];
+        [line addAnimation:morph forKey:morph.keyPath];
         selected = NO;
     }
 }
@@ -76,13 +77,16 @@
 -(CGPathRef)normal{
     UIBezierPath *plus = [UIBezierPath bezierPath];
     
-    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds))];
-    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds))];
+    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusWidth))];
+    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusWidth))];
     [plus closePath];
     
-    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)- (_plusHeight/2))];
-    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)+ (_plusHeight/2))];
-    [plus closePath];
+//    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)- (_plusHeight/2))];
+//    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)+ (_plusHeight/2))];
+//    [plus closePath];
+    
+    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)- (_plusWidth))];
+    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)-(_plusWidth))];
     
     return plus.CGPath;
 }
@@ -90,17 +94,17 @@
 -(CGPathRef)setSelectedPath{
     UIBezierPath *path = [UIBezierPath bezierPath];
     //triangle
-    [path moveToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)-(_plusHeight/2))];
-    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds)+(_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusHeight/4))];
-    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds)-(_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusHeight/4))];
-    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)-(_plusHeight/2))];
+//    [path moveToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)-(_plusHeight/2))];
+//    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds)+(_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusHeight/4))];
+//    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds)-(_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusHeight/4))];
+//    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)-(_plusHeight/2))];
     
     //close
-//    [path moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)-(_plusHeight/2))];
-//    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusHeight/2))];
-//    
-//    [path moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusHeight/2))];
-//    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)-(_plusHeight/2))];
+    [path moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/3), CGRectGetMidY(self.bounds)-(_plusHeight/3))];
+    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/3), CGRectGetMidY(self.bounds)+(_plusHeight/3))];
+    
+    [path moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/3), CGRectGetMidY(self.bounds)+(_plusHeight/3))];
+    [path addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/3), CGRectGetMidY(self.bounds)-(_plusHeight/3))];
     
     [path closePath];
     return path.CGPath;

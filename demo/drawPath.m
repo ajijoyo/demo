@@ -18,6 +18,7 @@
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, 0, 0);
     CGPathAddRelativeArc(path, NULL, CGRectGetMidX(rect), CGRectGetMidY(rect), _radius, _angle, _startAngle);
+    CGPathAddQuadCurveToPoint(path, NULL, 0, rect.size.height, rect.size.width, _radius);
     CGPathAddLineToPoint(path, NULL, rect.size.width, rect.size.height);
     CGPathAddLineToPoint(path, NULL, rect.size.width, 0);
     CGPathCloseSubpath(path);

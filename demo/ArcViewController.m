@@ -50,18 +50,18 @@
 }
 
 -(IBAction)slider:(UISlider*)sender{
-    CGFloat angle = M_PI*sender.value *segmentValue;
-    angleLabel.text = [NSString stringWithFormat:@"angle %f",angle];
+    CGFloat angle = radians(sender.value*360) *segmentValue;
+    angleLabel.text = [NSString stringWithFormat:@"angle %f",sender.value*360*segmentValue];
     drawpath.angle = angle;
 }
 -(IBAction)radius:(UISlider*)sender{
-    CGFloat angle = 200*sender.value;
+    CGFloat angle = 300*sender.value;
     radiusLabel.text = [NSString stringWithFormat:@"radius %f",angle];
     drawpath.radius = angle;
 }
 -(IBAction)startangle:(UISlider*)sender{
-    CGFloat angle = (M_PI*2)*sender.value*segmentStartValue;
-    startangleLabel.text = [NSString stringWithFormat:@"start angle %f",angle];
+    CGFloat angle = radians(sender.value*360)*segmentStartValue;
+    startangleLabel.text = [NSString stringWithFormat:@"start angle %f",sender.value*360*segmentStartValue];
     drawpath.startAngle = angle;
 }
 

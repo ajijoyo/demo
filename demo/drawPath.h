@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define radians(x) (M_PI/180)*x
+
 @interface drawPath : UIView
 
 @property(nonatomic,assign) CGFloat angle;
