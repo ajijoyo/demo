@@ -8,24 +8,33 @@
 
 import UIKit
 
-class homeTableViewController: UITableViewController {
+class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     let arrMenu = ["splitFlap","hidden object games","tiles games","circle load","Colorize","Test Arc"]
-
+    
+    @IBOutlet var tableview:tableRefreshPull!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let logIn = loginviewControl(frame: CGRectZero);
-        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
-            if let code = respon.objectForKey("responseCode") as? NSString{
-                if code.integerValue == 00{
-                    logIn.hide();
-                }else{
-                    logIn.shake();
-                }
-            }
-            })
-
+        let bttn = expandMenu()
+        bttn.listBttn=["1","2","3","4","5","6"];
+        bttn.bttnDidTap({(bttnMenu bttn)in
+            print(bttn.tag);
+        })
+        
+//        let logIn = loginviewControl(frame: CGRectZero);
+//        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
+//            if let code = respon.objectForKey("responseCode") as? NSString{
+//                if code.integerValue == 00{
+//                    logIn.hide();
+//                }else{
+//                    logIn.shake();
+//                }
+//            }
+//            })
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,18 +48,18 @@ class homeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return arrMenu.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         cell.textLabel?.text = arrMenu[indexPath.row];
@@ -58,7 +67,7 @@ class homeTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("viewController")
             self.navigationController?.pushViewController(vc!, animated: true)
@@ -80,49 +89,8 @@ class homeTableViewController: UITableViewController {
         }
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        tableview.tableRefreshPullDidScroll(scrollView)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

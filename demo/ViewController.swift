@@ -16,6 +16,8 @@ class ViewController: UIViewController ,SplitflapDataSource,SplitflapDelegate{
     var sikl = ["hellow" , "finish" , "bloww"]
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(sikl.reverse())

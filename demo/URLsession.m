@@ -22,7 +22,8 @@
 }
 
 -(id)init{
-    if (self==[super init]) {
+    self = [super init];
+    if (self) {
         self.timeOut = 30.0;
         queue = [NSMutableArray array];
         NSURLSessionConfiguration *configSession = [NSURLSessionConfiguration defaultSessionConfiguration];

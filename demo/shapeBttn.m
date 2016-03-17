@@ -25,7 +25,8 @@
     [self line];
 }
 -(instancetype)initWithFrame:(CGRect)frame{
-    if (self==[super initWithFrame:frame]) {
+    self=[super initWithFrame:frame];
+    if (self) {
         [self setup];
     }
     return self;
@@ -48,7 +49,6 @@
     line.path = [self normal];
     line.frame = self.bounds;
     [self.layer addSublayer:line];
-    
 }
 
 -(void)setSelected:(BOOL)select{
@@ -77,16 +77,18 @@
 -(CGPathRef)normal{
     UIBezierPath *plus = [UIBezierPath bezierPath];
     
-    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusWidth))];
-    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusWidth))];
+    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusWidth))];
     [plus closePath];
+    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)+(_plusWidth))];
+    
     
 //    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)- (_plusHeight/2))];
 //    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds)+ (_plusHeight/2))];
 //    [plus closePath];
     
-    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)- (_plusWidth))];
-    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)-(_plusWidth))];
+    [plus moveToPoint:CGPointMake(CGRectGetMidX(self.bounds) + (_plusHeight/2), CGRectGetMidY(self.bounds)-(_plusWidth))];
+    [plus addLineToPoint:CGPointMake(CGRectGetMidX(self.bounds) - (_plusHeight/2), CGRectGetMidY(self.bounds)- (_plusWidth))];
+    
     
     return plus.CGPath;
 }
@@ -116,7 +118,6 @@
         if (_fillColorHighligth) {
             _fillColor = _fillColorHighligth;
         }
-        self.transform = CGAffineTransformMakeScale(0.9, 0.9);
         [self setNeedsDisplay];
     }
     [super touchesBegan:touches withEvent:event];
@@ -125,7 +126,6 @@
     [super touchesEnded:touches withEvent:event];
     if (self.state == UIControlStateNormal) {
         _fillColor = containerFillColor;
-        self.transform = CGAffineTransformMakeScale(1, 1);
         [self setNeedsDisplay];
     }
     

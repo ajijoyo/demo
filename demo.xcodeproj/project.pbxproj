@@ -29,9 +29,13 @@
 		D30D28081C91777A0047AF83 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30D28071C91777A0047AF83 /* SpriteKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D30D28331C917E5B0047AF83 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30D28321C917E5B0047AF83 /* SceneKit.framework */; };
 		D30D28351C917E920047AF83 /* ColorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D28341C917E920047AF83 /* ColorizeViewController.swift */; };
+		D30E2B7C1C9A85C700C446D3 /* tableRefreshPull.m in Sources */ = {isa = PBXBuildFile; fileRef = D30E2B7B1C9A85C700C446D3 /* tableRefreshPull.m */; };
 		D3111BB41C800FC8008772A3 /* URLsession.m in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB31C800FC8008772A3 /* URLsession.m */; };
 		D3111BB71C8027D1008772A3 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3111BB61C8027D1008772A3 /* LoginView.xib */; };
 		D3111BB91C804B09008772A3 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3111BB81C804B09008772A3 /* LoginView.swift */; };
+		D31409C81C992950002E7BB2 /* expandMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D31409C71C992950002E7BB2 /* expandMenu.m */; };
+		D31409CC1C992978002E7BB2 /* bttnMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D31409CB1C992978002E7BB2 /* bttnMenu.m */; };
+		D31409CF1C9929A7002E7BB2 /* bttnHeadMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D31409CE1C9929A7002E7BB2 /* bttnHeadMenu.m */; };
 		D3164C721C76BC5500606D2B /* circleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3164C711C76BC5500606D2B /* circleViewController.swift */; };
 		D3164C751C76BD2D00606D2B /* circleLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3164C741C76BD2D00606D2B /* circleLoadView.m */; };
 		D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */; };
@@ -41,6 +45,7 @@
 		D31ACBCF1C0410D3000AF3C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31ACBCD1C0410D3000AF3C7 /* LaunchScreen.storyboard */; };
 		D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */; };
 		D31ACBD91C041656000AF3C7 /* duaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31ACBD81C041656000AF3C7 /* duaViewController.swift */; };
+		D31AF04C1C968420004044BD /* extensionBttn.m in Sources */ = {isa = PBXBuildFile; fileRef = D31AF04B1C968420004044BD /* extensionBttn.m */; };
 		D31B8ACC1C8FD8D500B0E2DF /* rectangleLoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31B8ACB1C8FD8D500B0E2DF /* rectangleLoadView.m */; };
 		D34E2ACD1C72FA5400E7A3E2 /* plane.png in Resources */ = {isa = PBXBuildFile; fileRef = D34E2ACC1C72FA5400E7A3E2 /* plane.png */; };
 		D3655BF41C746DE300ABE71C /* Wallpaper-686.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3655BED1C746DE300ABE71C /* Wallpaper-686.jpg */; };
@@ -110,10 +115,18 @@
 		D30D28071C91777A0047AF83 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		D30D28321C917E5B0047AF83 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		D30D28341C917E920047AF83 /* ColorizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorizeViewController.swift; sourceTree = "<group>"; };
+		D30E2B7A1C9A85C700C446D3 /* tableRefreshPull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableRefreshPull.h; sourceTree = "<group>"; };
+		D30E2B7B1C9A85C700C446D3 /* tableRefreshPull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableRefreshPull.m; sourceTree = "<group>"; };
 		D3111BB21C800FC8008772A3 /* URLsession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLsession.h; sourceTree = "<group>"; };
 		D3111BB31C800FC8008772A3 /* URLsession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLsession.m; sourceTree = "<group>"; };
 		D3111BB61C8027D1008772A3 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
 		D3111BB81C804B09008772A3 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D31409C61C992950002E7BB2 /* expandMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = expandMenu.h; sourceTree = "<group>"; };
+		D31409C71C992950002E7BB2 /* expandMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = expandMenu.m; sourceTree = "<group>"; };
+		D31409CA1C992978002E7BB2 /* bttnMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bttnMenu.h; sourceTree = "<group>"; };
+		D31409CB1C992978002E7BB2 /* bttnMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bttnMenu.m; sourceTree = "<group>"; };
+		D31409CD1C9929A7002E7BB2 /* bttnHeadMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bttnHeadMenu.h; sourceTree = "<group>"; };
+		D31409CE1C9929A7002E7BB2 /* bttnHeadMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bttnHeadMenu.m; sourceTree = "<group>"; };
 		D3164C711C76BC5500606D2B /* circleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = circleViewController.swift; sourceTree = "<group>"; };
 		D3164C731C76BD2D00606D2B /* circleLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = circleLoadView.h; sourceTree = "<group>"; };
 		D3164C741C76BD2D00606D2B /* circleLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = circleLoadView.m; sourceTree = "<group>"; };
@@ -126,6 +139,8 @@
 		D31ACBD01C0410D3000AF3C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D31ACBD61C041141000AF3C7 /* AJslideNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJslideNavigator.swift; sourceTree = "<group>"; };
 		D31ACBD81C041656000AF3C7 /* duaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = duaViewController.swift; sourceTree = "<group>"; };
+		D31AF04A1C968420004044BD /* extensionBttn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extensionBttn.h; sourceTree = "<group>"; };
+		D31AF04B1C968420004044BD /* extensionBttn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = extensionBttn.m; sourceTree = "<group>"; };
 		D31B8ACA1C8FD8D500B0E2DF /* rectangleLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rectangleLoadView.h; sourceTree = "<group>"; };
 		D31B8ACB1C8FD8D500B0E2DF /* rectangleLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rectangleLoadView.m; sourceTree = "<group>"; };
 		D34E2ACC1C72FA5400E7A3E2 /* plane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plane.png; sourceTree = "<group>"; };
@@ -222,8 +237,19 @@
 			children = (
 				D30BDA8C1C93F29A003A6786 /* shapeBttn.h */,
 				D30BDA8D1C93F29A003A6786 /* shapeBttn.m */,
+				D31AF04A1C968420004044BD /* extensionBttn.h */,
+				D31AF04B1C968420004044BD /* extensionBttn.m */,
 			);
 			name = bttn;
+			sourceTree = "<group>";
+		};
+		D30E2B7D1C9A85CC00C446D3 /* tablerefreshPull */ = {
+			isa = PBXGroup;
+			children = (
+				D30E2B7A1C9A85C700C446D3 /* tableRefreshPull.h */,
+				D30E2B7B1C9A85C700C446D3 /* tableRefreshPull.m */,
+			);
+			name = tablerefreshPull;
 			sourceTree = "<group>";
 		};
 		D3111BB51C800FCE008772A3 /* URLsession */ = {
@@ -235,6 +261,19 @@
 				D30D28021C9149790047AF83 /* UIImageView+URLsession.m */,
 			);
 			name = URLsession;
+			sourceTree = "<group>";
+		};
+		D31409C91C992955002E7BB2 /* expandMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D31409C61C992950002E7BB2 /* expandMenu.h */,
+				D31409C71C992950002E7BB2 /* expandMenu.m */,
+				D31409CD1C9929A7002E7BB2 /* bttnHeadMenu.h */,
+				D31409CE1C9929A7002E7BB2 /* bttnHeadMenu.m */,
+				D31409CA1C992978002E7BB2 /* bttnMenu.h */,
+				D31409CB1C992978002E7BB2 /* bttnMenu.m */,
+			);
+			name = expandMenu;
 			sourceTree = "<group>";
 		};
 		D3164C761C76BD3800606D2B /* circle */ = {
@@ -277,6 +316,8 @@
 				D3164C761C76BD3800606D2B /* circle */,
 				D3081A1B1C57272F0034A712 /* Splitflap */,
 				D30BDA8F1C93F2A1003A6786 /* bttn */,
+				D31409C91C992955002E7BB2 /* expandMenu */,
+				D30E2B7D1C9A85CC00C446D3 /* tablerefreshPull */,
 				D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */,
 				D3164C711C76BC5500606D2B /* circleViewController.swift */,
 				D31ACBC61C0410D3000AF3C7 /* ViewController.swift */,
@@ -455,16 +496,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D31AF04C1C968420004044BD /* extensionBttn.m in Sources */,
 				D3081A2B1C57272F0034A712 /* TileView.swift in Sources */,
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
 				D3111BB41C800FC8008772A3 /* URLsession.m in Sources */,
+				D30E2B7C1C9A85C700C446D3 /* tableRefreshPull.m in Sources */,
 				D31B8ACC1C8FD8D500B0E2DF /* rectangleLoadView.m in Sources */,
 				D3081A2A1C57272F0034A712 /* SplitflapTokens.swift in Sources */,
 				D30D28031C9149790047AF83 /* UIImageView+URLsession.m in Sources */,
 				D3111BB91C804B09008772A3 /* LoginView.swift in Sources */,
 				D30B59281C83F75A0093509F /* shakeView.m in Sources */,
 				D3655C081C74757300ABE71C /* IXNTileBoardView.m in Sources */,
+				D31409CF1C9929A7002E7BB2 /* bttnHeadMenu.m in Sources */,
 				D3655BF91C746DE300ABE71C /* gameHiddenObjectViewController.swift in Sources */,
+				D31409CC1C992978002E7BB2 /* bttnMenu.m in Sources */,
 				D30BDA8A1C93CB93003A6786 /* drawPath.m in Sources */,
 				D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */,
 				D3655BFD1C746E5700ABE71C /* homeTableViewController.swift in Sources */,
@@ -482,6 +527,7 @@
 				D31ACBC71C0410D3000AF3C7 /* ViewController.swift in Sources */,
 				D31ACBC51C0410D3000AF3C7 /* AppDelegate.swift in Sources */,
 				D3081A281C57272F0034A712 /* SplitflapDataSource.swift in Sources */,
+				D31409C81C992950002E7BB2 /* expandMenu.m in Sources */,
 				D3655C071C74757300ABE71C /* IXNTileBoard.m in Sources */,
 				D3164C721C76BC5500606D2B /* circleViewController.swift in Sources */,
 				D31ACBD91C041656000AF3C7 /* duaViewController.swift in Sources */,

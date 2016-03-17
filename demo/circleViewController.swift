@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class circleViewController: UIViewController {
     
     let loading = circleLoadView(frame: CGRect(x: 100, y: 200, width: 200, height: 200))
@@ -18,7 +19,7 @@ class circleViewController: UIViewController {
     @IBOutlet weak var bttn :shapeBttn!
     
     var timer : NSTimer!;
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +39,7 @@ class circleViewController: UIViewController {
         self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "loadingProgress", userInfo: nil, repeats: true);
         
         bttn.addTarget(self, action: "plusClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
