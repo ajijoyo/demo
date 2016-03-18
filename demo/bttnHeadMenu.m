@@ -44,6 +44,9 @@
     shapeLayer.strokeColor = _strokeColor.CGColor;
     shapeLayer.path = [self path].CGPath;
     [self.layer addSublayer:shapeLayer];
+    self.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.layer.shadowOffset = CGSizeMake(1, 1);
+    self.layer.shadowOpacity = 0.5;
 }
 -(UIBezierPath*)path{
     UIBezierPath *path = [UIBezierPath bezierPath];

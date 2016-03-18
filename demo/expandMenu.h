@@ -10,11 +10,17 @@
 #import "bttnHeadMenu.h"
 #import "bttnMenu.h"
 
+typedef NS_ENUM(NSUInteger,Aligment) {
+    Center = 0,
+    Left,
+    Right
+};
 
 typedef void (^bttnMenuHandler)(bttnMenu *sender);
 
 @interface expandMenu : UIView
 {
+
     CGFloat paddingMenu;
     NSLayoutConstraint *paddingBttm;
     NSLayoutConstraint *paddingRight;
@@ -30,8 +36,10 @@ typedef void (^bttnMenuHandler)(bttnMenu *sender);
 
 }
 
-
+-(instancetype)initWithRadius:(CGFloat)radiusM paddingRadius:(CGFloat)paddingRadiusM andALigtment:(Aligment)aligment;
 -(instancetype)initWithRadius:(CGFloat)radiusM paddingRadius:(CGFloat)paddingRadiusM;
+-(instancetype)initWithAligment:(Aligment)aligment;
+
 -(void)bttnDidTap:(bttnMenuHandler)handler;
 
 /** autohide after bttn did tap :default is YES: */
@@ -40,5 +48,9 @@ typedef void (^bttnMenuHandler)(bttnMenu *sender);
 @property(nonatomic,weak) NSArray *listBttn;
 /** custom head bttn here */
 @property(nonatomic,strong,readonly) bttnHeadMenu *headBttn;
+
+@property(nonatomic,weak) NSArray<UIView *> *listCustomBttn;
+
+@property(nonatomic,assign) Aligment aligment;
 
 @end

@@ -17,22 +17,32 @@ class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bttn = expandMenu()
-        bttn.listBttn=["1","2","3","4","5","6"];
+        var addarr = Array<UIView>();
+        for var i = 0 ;i<5;i++ {
+            let button = shapeBttn(frame: CGRect(x: 0, y: 0, width: 30, height: 30));
+            addarr.append(button);
+        }
+        let coba1 = bttnMenu(frame: CGRect(x: 0, y: 0, width: 80, height: 30));
+        coba1.title = "1";
+        addarr.append(coba1)
+
+        let bttn = expandMenu(aligment: .Center);
+        bttn.listCustomBttn = addarr;
+//        bttn.listBttn=["1","2","3","4","5"];
         bttn.bttnDidTap({(bttnMenu bttn)in
             print(bttn.tag);
         })
         
-//        let logIn = loginviewControl(frame: CGRectZero);
-//        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
-//            if let code = respon.objectForKey("responseCode") as? NSString{
-//                if code.integerValue == 00{
-//                    logIn.hide();
-//                }else{
-//                    logIn.shake();
-//                }
-//            }
-//            })
+        let logIn = loginviewControl(frame: CGRectZero);
+        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
+            if let code = respon.objectForKey("responseCode") as? NSString{
+                if code.integerValue == 00{
+                    logIn.hide();
+                }else{
+                    logIn.shake();
+                }
+            }
+            })
         
         
     }

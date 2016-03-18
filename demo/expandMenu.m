@@ -12,7 +12,6 @@ CGFloat radius = 40;
 CGFloat paddingRadius = 25;
 
 
-
 @implementation expandMenu
 
 /*
@@ -20,17 +19,25 @@ CGFloat paddingRadius = 25;
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
+
 }
 */
 
+
 -(instancetype)initWithRadius:(CGFloat)radiusM paddingRadius:(CGFloat)paddingRadiusM{
+    
+    return [self initWithRadius:radiusM paddingRadius:paddingRadiusM andALigtment:0];
+}
+
+-(instancetype)initWithRadius:(CGFloat)radiusM paddingRadius:(CGFloat)paddingRadiusM andALigtment:(Aligment)aligment{
     if (self==[super initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - radiusM - paddingRadiusM, [UIScreen mainScreen].bounds.size.height - radiusM - paddingRadiusM, radiusM, radiusM)]) {
         radius = radiusM;
         paddingRadius = paddingRadiusM;
         paddingMenu = 15;
         paddingEachBttn = 15;
         _isAutoHide = YES;
-        
+        _aligment = aligment;
+
         _headBttn = [[bttnHeadMenu alloc]initWithSize:CGSizeMake(radius, radius)];
         [_headBttn addTarget:self action:@selector(headBttnListener:) forControlEvents:UIControlEventTouchUpInside];
         _headBttn.translatesAutoresizingMaskIntoConstraints = NO;
@@ -52,6 +59,10 @@ CGFloat paddingRadius = 25;
         [[UIApplication sharedApplication].keyWindow addSubview:self];
     }
     return self;
+}
+
+-(instancetype)initWithAligment:(Aligment)aligment{
+    return [self initWithRadius:radius paddingRadius:paddingRadius andALigtment:aligment];
 }
 
 -(instancetype)init{
@@ -92,9 +103,40 @@ CGFloat paddingRadius = 25;
                                                       constant:radius]];
 }
 
+-(void)setAligment:(Aligment)aligment{
+    _aligment = aligment;
+    
+}
+
 -(void)setListBttn:(NSArray *)listBttn{
     _listBttn = listBttn;
     [self createButton];
+
+}
+-(void)setListCustomBttn:(NSArray<UIView *> *)listCustomBttn{
+    _listCustomBttn = listCustomBttn;
+    [containerArrBttn removeAllObjects];
+    scrollHeight = 0;
+    CGFloat ybttnx = 8;
+    int i = 0;
+    for (UIView *bttn in _listCustomBttn) {
+        scrollWidth = bttn.bounds.size.width;
+        bttn.frame = CGRectMake(0, 0, bttn.bounds.size.width, bttn.bounds.size.height);
+        bttn.layer.shadowOffset = CGSizeMake(1.5, 1.5);
+        bttn.layer.shadowColor = [UIColor blackColor].CGColor;
+        bttn.layer.shadowOpacity = 0.5;
+        
+        ybttnx += bttn.bounds.size.height + paddingEachBttn;
+        
+        CGPoint center = bttn.center;
+        center.x = (scrollWidth*1.3)/2;
+        bttn.center = center;
+        bttn.tag = i;
+        [containerArrBttn addObject:bttn];
+        
+        i++;
+        scrollHeight = ybttnx + paddingEachBttn;
+    }
 }
 
 -(void)createButton{
@@ -105,7 +147,7 @@ CGFloat paddingRadius = 25;
     for (NSString *title in _listBttn) {
         bttnMenu *bttn = [[bttnMenu alloc]init];
         scrollWidth = bttn.bounds.size.width;
-        bttn.frame = CGRectMake(0, ybttnx, bttn.bounds.size.width, bttn.bounds.size.height);
+        bttn.frame = CGRectMake(0, 0, bttn.bounds.size.width, bttn.bounds.size.height);
         ybttnx += bttn.bounds.size.height + paddingEachBttn;
         
         CGPoint center = bttn.center;
@@ -176,15 +218,62 @@ CGFloat paddingRadius = 25;
     
     self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.3];
     
-    for (bttnMenu *bttn in containerArrBttn) {
-        [scrollContainerBttn addSubview:bttn];
-    }
+    [self animationBttn];
     
     UIVisualEffect *blurEffect;
     blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
     visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     visualEffectView.frame = self.bounds;
-    [self insertSubview:visualEffectView atIndex:0];
+//    [self insertSubview:visualEffectView atIndex:0];
+}
+
+-(void)animationBttn{
+    int ybttnx = 8;
+    for ( int i=0; i<containerArrBttn.count; i++) {
+        UIView *bttn = containerArrBttn[i];
+        CGRect frame = bttn.frame;
+        frame.origin.y = scrollContainerBttn.bounds.size.height;
+        bttn.frame = frame;
+        [scrollContainerBttn addSubview:bttn];
+        CGPoint position;
+        CGFloat positionxDefault;
+        switch (_aligment) {
+            case Right:
+                position = CGPointMake(scrollContainerBttn.bounds.size.width - paddingMenu - bttn.bounds.size.width, ybttnx);
+                positionxDefault = position.x;
+                break;
+            case Center:
+                position = CGPointMake(((scrollWidth*1.3)-bttn.bounds.size.width)/2, ybttnx);
+                positionxDefault = (scrollWidth*1.3)/2;
+                break;
+            case Left:
+                position = CGPointMake(paddingMenu, ybttnx);
+                positionxDefault = position.x;
+                break;
+            default:
+                break;
+        }
+
+        
+        CGMutablePathRef path = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(path, NULL,scrollContainerBttn.bounds.size.width, scrollContainerBttn.bounds.size.height);
+//        CGPathAddLineToPoint(path, NULL, (scrollWidth*1.3)/2, ybttnx);
+        CGPathAddQuadCurveToPoint(path, NULL, 0, scrollContainerBttn.bounds.size.height/2, positionxDefault, ybttnx);
+        
+        CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+        anim.path = path;
+        anim.duration = 0.5;
+        
+        [bttn.layer addAnimation:anim forKey:anim.keyPath];
+        
+        CGRect posi = bttn.frame;
+        posi.origin = position;
+        bttn.frame = posi;
+        
+        CGPathRelease(path);
+        ybttnx += bttn.bounds.size.height + paddingEachBttn;
+    }
 }
 
 -(void)hideMenu{
@@ -194,7 +283,7 @@ CGFloat paddingRadius = 25;
     paddingBttm.constant = 0 ;
     paddingRight.constant = 0;
 
-    for (bttnMenu *bttn in containerArrBttn) {
+    for (id bttn in containerArrBttn) {
         [bttn removeFromSuperview];
     }
     
