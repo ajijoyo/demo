@@ -40,6 +40,12 @@ class circleViewController: UIViewController {
         
         bttn.addTarget(self, action: "plusClicked:", forControlEvents: UIControlEvents.TouchUpInside)
         
+        let bttninfo = infoViewBttn(frame: CGRect(x: self.view.center.x, y: self.view.bounds.height - 40, width: 40, height: 40))
+        bttninfo.center.y = 100;
+        bttninfo.center.x = self.view.center.x;
+        bttninfo.autoresizingMask = [.FlexibleBottomMargin,.FlexibleLeftMargin,.FlexibleRightMargin];
+        self.view.addSubview(bttninfo);
+        
     }
     
     override func viewDidAppear(animated: Bool) {

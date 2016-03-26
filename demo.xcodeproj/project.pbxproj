@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D303FC181CA38FD200FEC847 /* infoViewBttn.m in Sources */ = {isa = PBXBuildFile; fileRef = D303FC171CA38FD200FEC847 /* infoViewBttn.m */; };
+		D303FC1C1CA3905B00FEC847 /* infoViewMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = D303FC1B1CA3905B00FEC847 /* infoViewMessage.m */; };
+		D303FC1E1CA391F100FEC847 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = D303FC1D1CA391F100FEC847 /* info.png */; };
 		D3071C811C5E560E00CADA26 /* adsOn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3071C801C5E560E00CADA26 /* adsOn.swift */; };
 		D3081A251C57272F0034A712 /* FlapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3081A1C1C57272F0034A712 /* FlapView.swift */; };
 		D3081A261C57272F0034A712 /* FlapViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3081A1D1C57272F0034A712 /* FlapViewBuilder.swift */; };
@@ -87,6 +90,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D303FC161CA38FD200FEC847 /* infoViewBttn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoViewBttn.h; sourceTree = "<group>"; };
+		D303FC171CA38FD200FEC847 /* infoViewBttn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoViewBttn.m; sourceTree = "<group>"; };
+		D303FC1A1CA3905B00FEC847 /* infoViewMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infoViewMessage.h; sourceTree = "<group>"; };
+		D303FC1B1CA3905B00FEC847 /* infoViewMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infoViewMessage.m; sourceTree = "<group>"; };
+		D303FC1D1CA391F100FEC847 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		D3071C801C5E560E00CADA26 /* adsOn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = adsOn.swift; sourceTree = "<group>"; };
 		D3081A1C1C57272F0034A712 /* FlapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlapView.swift; sourceTree = "<group>"; };
 		D3081A1D1C57272F0034A712 /* FlapViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlapViewBuilder.swift; sourceTree = "<group>"; };
@@ -184,6 +192,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D303FC191CA38FDE00FEC847 /* infoViewBttn */ = {
+			isa = PBXGroup;
+			children = (
+				D303FC1D1CA391F100FEC847 /* info.png */,
+				D303FC161CA38FD200FEC847 /* infoViewBttn.h */,
+				D303FC171CA38FD200FEC847 /* infoViewBttn.m */,
+				D303FC1A1CA3905B00FEC847 /* infoViewMessage.h */,
+				D303FC1B1CA3905B00FEC847 /* infoViewMessage.m */,
+			);
+			name = infoViewBttn;
+			sourceTree = "<group>";
+		};
 		D3081A1B1C57272F0034A712 /* Splitflap */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,8 +338,9 @@
 				D30BDA8F1C93F2A1003A6786 /* bttn */,
 				D31409C91C992955002E7BB2 /* expandMenu */,
 				D30E2B7D1C9A85CC00C446D3 /* tablerefreshPull */,
-				D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */,
+				D303FC191CA38FDE00FEC847 /* infoViewBttn */,
 				D3164C711C76BC5500606D2B /* circleViewController.swift */,
+				D31ACBC41C0410D3000AF3C7 /* AppDelegate.swift */,
 				D31ACBC61C0410D3000AF3C7 /* ViewController.swift */,
 				D3655C0A1C7476E300ABE71C /* tilesViewController.swift */,
 				D30D28341C917E920047AF83 /* ColorizeViewController.swift */,
@@ -469,6 +490,7 @@
 				D3655BF51C746DE300ABE71C /* roundedLogo.png in Resources */,
 				D3655BFA1C746DE300ABE71C /* gameHiddenObjectViewController.xib in Resources */,
 				D3655BF41C746DE300ABE71C /* Wallpaper-686.jpg in Resources */,
+				D303FC1E1CA391F100FEC847 /* info.png in Resources */,
 				D3111BB71C8027D1008772A3 /* LoginView.xib in Resources */,
 				D34E2ACD1C72FA5400E7A3E2 /* plane.png in Resources */,
 				D3655BF81C746DE300ABE71C /* planet.png in Resources */,
@@ -499,6 +521,7 @@
 				D31AF04C1C968420004044BD /* extensionBttn.m in Sources */,
 				D3081A2B1C57272F0034A712 /* TileView.swift in Sources */,
 				D3081A271C57272F0034A712 /* Splitflap.swift in Sources */,
+				D303FC1C1CA3905B00FEC847 /* infoViewMessage.m in Sources */,
 				D3111BB41C800FC8008772A3 /* URLsession.m in Sources */,
 				D30E2B7C1C9A85C700C446D3 /* tableRefreshPull.m in Sources */,
 				D31B8ACC1C8FD8D500B0E2DF /* rectangleLoadView.m in Sources */,
@@ -512,6 +535,7 @@
 				D31409CC1C992978002E7BB2 /* bttnMenu.m in Sources */,
 				D30BDA8A1C93CB93003A6786 /* drawPath.m in Sources */,
 				D31ACBD71C041141000AF3C7 /* AJslideNavigator.swift in Sources */,
+				D303FC181CA38FD200FEC847 /* infoViewBttn.m in Sources */,
 				D3655BFD1C746E5700ABE71C /* homeTableViewController.swift in Sources */,
 				D3081A291C57272F0034A712 /* SplitflapDelegate.swift in Sources */,
 				D3081A261C57272F0034A712 /* FlapViewBuilder.swift in Sources */,

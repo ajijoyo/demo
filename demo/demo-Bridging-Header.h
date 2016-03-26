@@ -14,3 +14,5 @@
 #import "shapeBttn.h"
 #import "expandMenu.h"
 #import "tableRefreshPull.h"
+
+#import "infoViewBttn.h"
