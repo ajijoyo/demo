@@ -29,24 +29,27 @@
         
         mainScrollView = [[UIScrollView alloc]init];
         
-        messageInfo = [[UILabel alloc]initWithFrame:mainScrollView.bounds];
+        messageInfo = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, mainScrollView.bounds.size.width, mainScrollView.bounds.size.height-15)];
         messageInfo.textAlignment = NSTextAlignmentCenter;
-        messageInfo.textColor = [UIColor blackColor];
+        messageInfo.textColor = [UIColor whiteColor];
+        messageInfo.font = [UIFont systemFontOfSize:15];
         messageInfo.backgroundColor = [UIColor clearColor];
         messageInfo.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         
-        
+        messageIcon = [[UIImageView alloc]initWithImage:[[UIImage imageNamed:@"info"]imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate]];
+        messageIcon.frame = CGRectMake(2.5, 0, 10, 10);
+        messageIcon.contentMode = UIViewContentModeScaleAspectFit;
+        messageIcon.tintColor = [UIColor whiteColor];
+
         [self addSubview:mainScrollView];
+        
         [mainScrollView addSubview:messageInfo];
+        [mainScrollView addSubview:messageIcon];
         
         messageInfo.center = mainScrollView.center;
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hide)];
         [self addGestureRecognizer:tap];
-        
-        //testing
-        messageInfo.backgroundColor = [UIColor yellowColor];
-        mainScrollView.backgroundColor = [UIColor brownColor];
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
         [mainScrollView addGestureRecognizer:pan];
@@ -57,27 +60,36 @@
 -(void)calculateMessage{
     messageInfo.text = _message;
     CGSize size = [messageInfo sizeThatFits:CGSizeMake(self.bounds.size.width - 54, MAXFLOAT)];
-    mainScrollView.frame = CGRectMake(0, 0, size.width + 20, size.height + 32);
+    mainScrollView.frame = CGRectMake(0, 0, size.width + 24, size.height + 8);
     mainScrollView.center = self.center;
+    messageInfo.frame = CGRectMake(15, 0, size.width, mainScrollView.bounds.size.height);
+    
+    CGPoint centerIcon = messageIcon.center;
+    centerIcon.y = mainScrollView.bounds.size.height/2;
+    messageIcon.center = centerIcon;
     
 }
 
 -(void)createBoundsLayer{
     [self calculateMessage];
+    boundsLayer = [CAShapeLayer layer];
+    boundsLayer.path = [self boundsPath].CGPath;
+    boundsLayer.fillColor = self.tintColor.CGColor;
+    [mainScrollView.layer insertSublayer:boundsLayer below:messageInfo.layer];
 }
 
 -(UIBezierPath*)boundsPath{
-    UIBezierPath *path = [UIBezierPath bezierPath];
-//    path moveToPoint:CGPointMake(<#CGFloat x#>, <#CGFloat y#>)
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:mainScrollView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(5, 5)];
+    
     return path;
 }
 
 
 -(void)pan:(UIPanGestureRecognizer*)sender{
     CGPoint point = [sender translationInView:self];
-    NSLog(@"%@",NSStringFromCGPoint(point));
+//    NSLog(@"%@",NSStringFromCGPoint(point));
     if (sender.state == UIGestureRecognizerStateChanged || sender.state == UIGestureRecognizerStateBegan) {
-        mainScrollView.transform = CGAffineTransformMakeTranslation(point.x*0.8, point.y*0.8);
+        mainScrollView.transform = CGAffineTransformMakeTranslation(point.x, point.y);
 
     }else{
         [UIView animateWithDuration:0.2 animations:^{
@@ -98,7 +110,7 @@
 }
 
 -(void)show{
-    [self calculateMessage];
+    [self createBoundsLayer];
     [[UIApplication sharedApplication].keyWindow addSubview:self];
 }
 -(void)hide{

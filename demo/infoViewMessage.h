@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger,pointCenterX){
     
     UIScrollView *mainScrollView;
     UILabel *messageInfo;
+    UIImageView *messageIcon;
     CGRect rectCenter;
     
     CAShapeLayer *boundsLayer;

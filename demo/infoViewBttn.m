@@ -31,7 +31,6 @@
     messageView = [[infoViewMessage alloc]initWithString:@"tesasdasdasd adsadt" onRect:frame2];
     [messageView show];
     
-    
 }
 
 @end

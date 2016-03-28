@@ -33,7 +33,7 @@ class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewD
             print(bttn.tag);
         })
         
-//        let logIn = loginviewControl(frame: CGRectZero);
+        let logIn = loginviewControl(frame: CGRectZero);
 //        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
 //            if let code = respon.objectForKey("responseCode") as? NSString{
 //                if code.integerValue == 00{
