@@ -18,6 +18,8 @@ class circleViewController: UIViewController {
     let rectInfit = rectangleLoadView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
     @IBOutlet weak var bttn :shapeBttn!
     
+    let coba1 = AJloadingCircle(frame: CGRect(x: 0, y: 300, width: 150, height: 100));
+    
     var timer : NSTimer!;
 
     override func viewDidLoad() {
@@ -46,6 +48,7 @@ class circleViewController: UIViewController {
         bttninfo.autoresizingMask = [.FlexibleBottomMargin,.FlexibleLeftMargin,.FlexibleRightMargin];
         self.view.addSubview(bttninfo);
         
+        coba1.center.x = self.view.center.x;
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -53,7 +56,13 @@ class circleViewController: UIViewController {
         
     }
     @IBAction func plusClicked(sender:shapeBttn){
-        sender.selected = !sender.selected;
+        sender.isSelected = !sender.isSelected;
+        if sender.isSelected {
+            coba1.show()
+        }else{
+            coba1.hide()
+        }
+        
     }
     
     override func viewWillLayoutSubviews() {

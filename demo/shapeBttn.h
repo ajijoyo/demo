@@ -13,8 +13,9 @@ IB_DESIGNABLE
 {
     UIColor *containerFillColor;
     CAShapeLayer *line;
-    BOOL selected;
+//    BOOL selected;
 }
+@property(nonatomic,assign) BOOL isSelected;
 @property(nonatomic,assign) IBInspectable CGFloat plusWidth;
 @property(nonatomic,assign) IBInspectable CGFloat plusHeight;
 

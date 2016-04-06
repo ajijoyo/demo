@@ -52,7 +52,7 @@
 }
 
 -(void)setSelected:(BOOL)select{
-    if (!selected) {
+    if (!_isSelected) {
         CABasicAnimation *morph = [CABasicAnimation animationWithKeyPath:@"path"];
         morph.duration = 0.5;
         morph.fromValue = (id)[self normal];
@@ -60,7 +60,7 @@
         morph.fillMode = kCAFillModeForwards;
         morph.removedOnCompletion = NO;
         [line addAnimation:morph forKey:morph.keyPath];
-        selected = YES;
+        _isSelected = YES;
     }else{
         CABasicAnimation *morph = [CABasicAnimation animationWithKeyPath:@"path"];
         morph.duration = 0.5;
@@ -69,7 +69,7 @@
         morph.fillMode = kCAFillModeForwards;
         morph.removedOnCompletion = NO;
         [line addAnimation:morph forKey:morph.keyPath];
-        selected = NO;
+        _isSelected = NO;
     }
 }
 

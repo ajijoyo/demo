@@ -80,7 +80,6 @@
 
 -(UIBezierPath*)boundsPath{
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:mainScrollView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(5, 5)];
-    
     return path;
 }
 
