@@ -18,7 +18,7 @@ class circleViewController: UIViewController {
     let rectInfit = rectangleLoadView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
     @IBOutlet weak var bttn :shapeBttn!
     
-    let coba1 = AJloadingCircle(frame: CGRect(x: 0, y: 300, width: 150, height: 100));
+    let coba1 = AJloadingScale(frame: CGRect(x: 0, y: 300, width: 200, height: 100));
     
     var timer : NSTimer!;
 
@@ -59,8 +59,11 @@ class circleViewController: UIViewController {
         sender.isSelected = !sender.isSelected;
         if sender.isSelected {
             coba1.show()
+            
+            
         }else{
             coba1.hide()
+            
         }
         
     }

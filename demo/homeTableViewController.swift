@@ -10,7 +10,7 @@ import UIKit
 
 class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load","Colorize","Test Arc"]
+    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load","Colorize","Test Arc","test extension"]
     
     @IBOutlet var tableview:tableRefreshPull!;
     
@@ -29,9 +29,9 @@ class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewD
         let bttn = expandMenu(aligment: .Center);
         bttn.listCustomBttn = addarr;
 //        bttn.listBttn=["1","2","3","4","5"];
-        bttn.bttnDidTap({(bttnMenu bttn)in
-            print(bttn.tag);
-        })
+        bttn.bttnDidTap { (bttn) in
+            print(bttn.tag)
+        }
         
         let logIn = loginviewControl(frame: CGRectZero);
 //        logIn.show({[unowned self](respon : AnyObject! , error : NSError!)in
@@ -43,6 +43,7 @@ class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewD
 //                }
 //            }
 //        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,6 +95,9 @@ class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewD
         }else if indexPath.row == 5{
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("testarc");
             self.navigationController?.pushViewController(vc!, animated: true);
+        }else if indexPath.row == 6 {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("testextension")
+            self.navigationController?.pushViewController(vc!, animated: true)
         }
     }
 
