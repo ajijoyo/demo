@@ -10,7 +10,7 @@ import UIKit
 
 class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load","Colorize","Test Arc","test extension"]
+    let arrMenu = ["splitFlap","hidden object games","tiles games","circle load","Colorize","Test Arc","test extension","test wikitude"]
     
     @IBOutlet var tableview:tableRefreshPull!;
     
@@ -97,6 +97,9 @@ class homeTableViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.navigationController?.pushViewController(vc!, animated: true);
         }else if indexPath.row == 6 {
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("testextension")
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }else if indexPath.row == 7 {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("wikitude")
             self.navigationController?.pushViewController(vc!, animated: true)
         }
     }

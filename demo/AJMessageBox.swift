@@ -8,6 +8,16 @@
 
 import UIKit
 
+/**
+ example :
+ let vc = AJMessageBox(withTitle: "lorem", message: "are you sure to open search page??", cancelTitle: "cancel", okTitle: "confirm")
+ vc.show({
+    //doing cancel
+ }, didConfirm: {
+    //doing confirm
+ })
+ */
+
 typealias handlerMessage = () -> Void
 
 class AJMessageBox: UIView {

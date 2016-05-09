@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface wikitudeViewController : UIViewController
+
+@interface wikitudeViewController : UIViewController 
 
 @end

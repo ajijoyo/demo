@@ -18,3 +18,4 @@
 #import "AJloadingScale.h"
 #import "infoViewBttn.h"
 #import "dateExtension.h"
+#import "wikitudeViewController.h"
